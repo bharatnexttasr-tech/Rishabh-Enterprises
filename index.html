@@ -1495,13 +1495,13 @@ async function sharePDF(doc, filename, saleIds, customerPhone) {
     renderReport();
   };
  
-  // Step 1: Always try native share first (Android share sheet = best experience)
   const pdfBlob = doc.output('blob');
   const file = new File([pdfBlob], filename, {type:'application/pdf'});
  
-  if (navigator.canShare && navigator.canShare({files:[file]})) {
+  // Method 1: Native share sheet (best on Android — opens WhatsApp, Files, etc.)
+  if (navigator.share && navigator.canShare && navigator.canShare({files:[file]})) {
     try {
-      await navigator.share({ files:[file], title:'Bill from Rishabh Traders', text:'Your bill from Rishabh Traders' });
+      await navigator.share({ files:[file], title:'Bill — Rishabh Traders' });
       markBillSent();
       showToast('🧾 Bill shared!');
       return;
@@ -1510,74 +1510,62 @@ async function sharePDF(doc, filename, saleIds, customerPhone) {
     }
   }
  
-  // Step 2: Download PDF + show WhatsApp action sheet
-  fallbackPDFDownload(doc, filename);
-  markBillSent();
-  showBillActionSheet(filename, customerPhone);
+  // Method 2: Show action sheet with options
+  mobilePDFActionSheet(doc, filename, customerPhone, markBillSent);
 }
  
-function showBillActionSheet(filename, customerPhone) {
-  // Remove any existing action sheet
-  const existing = document.getElementById('billActionSheet');
+function mobilePDFActionSheet(doc, filename, customerPhone, onDone) {
+  const existing = document.getElementById('pdfActionSheet');
   if (existing) existing.remove();
  
+  const pdfDataUri = doc.output('datauristring');
   const phone = customerPhone ? customerPhone.replace(/\D/g,'') : '';
   const waUrl = phone
-    ? 'https://wa.me/91' + phone + '?text=' + encodeURIComponent('Dear Customer, your bill from Rishabh Traders has been downloaded. Bill No: ' + filename.replace('Bill_','').replace('.pdf',''))
-    : 'https://wa.me/?text=' + encodeURIComponent('Bill from Rishabh Traders — ' + filename);
+    ? 'https://wa.me/91' + phone + '?text=' + encodeURIComponent('Bill from Rishabh Traders: ' + filename)
+    : 'https://wa.me/?text=' + encodeURIComponent('Bill from Rishabh Traders');
  
   const sheet = document.createElement('div');
-  sheet.id = 'billActionSheet';
-  sheet.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);display:flex;flex-direction:column;justify-content:flex-end;';
+  sheet.id = 'pdfActionSheet';
+  sheet.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);display:flex;flex-direction:column;justify-content:flex-end;';
   sheet.innerHTML = `
-    <div style="background:#fff;border-radius:20px 20px 0 0;padding:20px 16px 32px;">
-      <div style="font-family:Baloo 2,cursive;font-size:1rem;font-weight:800;color:#006064;margin-bottom:6px;">📥 Bill Downloaded!</div>
-      <div style="font-size:0.8rem;color:#666;margin-bottom:16px;">PDF saved to your Downloads folder. Now you can send it:</div>
-      <a href="${waUrl}" target="_blank" onclick="document.getElementById('billActionSheet').remove();"
-        style="display:flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:0.95rem;margin-bottom:10px;">
-        <span style="font-size:1.5rem;">📱</span>
-        <span>${phone ? 'Send to ' + (document.getElementById('customerPhoneInput')?.value || phone) + ' on WhatsApp' : 'Send on WhatsApp'}</span>
+    <div style="background:#fff;border-radius:20px 20px 0 0;padding:20px 16px 36px;">
+      <div style="font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:800;color:#006064;margin-bottom:4px;">📄 ${filename}</div>
+      <div style="font-size:0.78rem;color:#888;margin-bottom:18px;">Choose how to save or send this bill:</div>
+ 
+      <a href="${pdfDataUri}" download="${filename}"
+        onclick="setTimeout(()=>{ if(window.pdfActionDone) return; document.getElementById('pdfActionSheet')?.remove(); },1500);"
+        style="display:flex;align-items:center;gap:12px;background:#006064;color:#fff;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:0.92rem;margin-bottom:10px;">
+        <span style="font-size:1.4rem;">📥</span>
+        <div><div>Download PDF</div><div style="font-size:0.7rem;font-weight:400;opacity:0.8;">Saves to Downloads folder</div></div>
       </a>
-      <button onclick="document.getElementById('billActionSheet').remove();"
+ 
+      <a href="${pdfDataUri}" target="_blank"
+        onclick="setTimeout(()=>document.getElementById('pdfActionSheet')?.remove(),500);"
+        style="display:flex;align-items:center;gap:12px;background:#0097A7;color:#fff;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:0.92rem;margin-bottom:10px;">
+        <span style="font-size:1.4rem;">👁️</span>
+        <div><div>Open PDF in Browser</div><div style="font-size:0.7rem;font-weight:400;opacity:0.8;">View & share from browser</div></div>
+      </a>
+ 
+      <a href="${waUrl}" target="_blank"
+        onclick="setTimeout(()=>document.getElementById('pdfActionSheet')?.remove(),500);"
+        style="display:flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:0.92rem;margin-bottom:10px;">
+        <span style="font-size:1.4rem;">📱</span>
+        <div><div>${phone ? 'WhatsApp to +91'+phone : 'Open WhatsApp'}</div><div style="font-size:0.7rem;font-weight:400;opacity:0.8;">Send message${phone ? '' : ' — attach PDF manually'}</div></div>
+      </a>
+ 
+      <button onclick="document.getElementById('pdfActionSheet').remove();"
         style="width:100%;padding:12px;background:none;border:2px solid #B2EBF2;border-radius:10px;color:#666;font-size:0.85rem;cursor:pointer;">
-        Close
+        Cancel
       </button>
     </div>
   `;
-  sheet.addEventListener('click', e => { if (e.target === sheet) sheet.remove(); });
+  sheet.addEventListener('click', e => { if (e.target === sheet) { sheet.remove(); } });
   document.body.appendChild(sheet);
+  if (onDone) onDone();
 }
  
 function fallbackPDFDownload(doc, filename) {
-  try {
-    // Method 1: blob URL (most reliable)
-    const blob = doc.output('blob');
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 2000);
-    showToast('📥 Bill downloaded!');
-  } catch(e) {
-    try {
-      // Method 2: data URI fallback
-      const dataUri = doc.output('datauristring');
-      const a = document.createElement('a');
-      a.href = dataUri;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      showToast('📥 Bill downloaded!');
-    } catch(e2) {
-      // Method 3: open in new tab
-      const dataUri = doc.output('datauristring');
-      window.open(dataUri, '_blank');
-      showToast('📄 Bill opened in new tab — save with Ctrl+S');
-    }
-  }
+  mobilePDFActionSheet(doc, filename, null, null);
 }
  
 // ── Customer Name Modal ───────────────────
