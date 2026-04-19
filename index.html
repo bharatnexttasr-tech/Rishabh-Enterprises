@@ -502,11 +502,11 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     <button onclick="openAddCustomerModal()" style="padding:0 14px;background:#006064;color:#fff;border:none;border-radius:10px;font-size:1.3rem;font-weight:700;cursor:pointer;flex-shrink:0;">＋</button>
   </div>
   <!-- Payment filter chips -->
-  <div style="display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
     <div class="cat-chip active" id="cpf-all"    onclick="setCustPayFilter('all',this)">All</div>
     <div class="cat-chip"        id="cpf-cash"   onclick="setCustPayFilter('cash',this)">💵 Cash</div>
     <div class="cat-chip"        id="cpf-upi"    onclick="setCustPayFilter('upi',this)">📱 UPI</div>
-    <div class="cat-chip"        id="cpf-credit" onclick="setCustPayFilter('credit',this)">📒 Credit</div>
+    <div class="cat-chip"        id="cpf-credit" onclick="setCustPayFilter('credit',this)">📒 Credit Due</div>
     <div class="cat-chip"        id="cpf-mixed"  onclick="setCustPayFilter('mixed',this)">🔀 Mixed</div>
   </div>
   <div id="customerStats" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;"></div>
@@ -2102,6 +2102,7 @@ function renderCustomers() {
           <div class="cc-stats">🧾 ${c.totalBills||0} bills &nbsp;•&nbsp; ₹${(c.totalAmount||0).toLocaleString('en-IN')}</div>
         </div>
         <div class="cc-actions">
+          <button class="cc-btn" onclick="window.open('tel:${c.phone}')" style="background:#E8F5E9;color:#2E7D32;">📞</button>
           <button class="cc-btn wa" onclick="window.open('https://wa.me/91${c.phone}','_blank')">📱</button>
           <button class="cc-btn" onclick="deleteCustomer(${c.id})">🗑</button>
         </div>
