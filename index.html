@@ -879,6 +879,17 @@ function startFirebaseListeners() {
     });
     if (document.getElementById('page-stock').classList.contains('active')) renderStock();
   }, err => console.warn('Custom products listener:', err));
+ 
+  // Customers real-time listener
+  userCol('customers').orderBy('name').onSnapshot(snap => {
+    customers = snap.docs.map(d => d.data());
+    localStorage.setItem('rt_customers', JSON.stringify(customers));
+    if (document.getElementById('page-customers').classList.contains('active')) renderCustomers();
+  }, err => {
+    // Firebase failed — load from localStorage
+    customers = JSON.parse(localStorage.getItem('rt_customers') || '[]');
+    if (document.getElementById('page-customers').classList.contains('active')) renderCustomers();
+  });
 }
  
 // ── Local fallback ────────────────────────
@@ -1905,16 +1916,9 @@ let custPayFilter = 'all';
  
  
 async function loadCustomers() {
-  if (fbEnabled && db && userCol('customers')) {
-    try {
-      const snap = await userCol('customers').orderBy('name').get();
-      customers = snap.docs.map(d => d.data());
-    } catch(e) {
-      customers = JSON.parse(localStorage.getItem('rt_customers') || '[]');
-    }
-  } else {
-    customers = JSON.parse(localStorage.getItem('rt_customers') || '[]');
-  }
+  // Always load from localStorage first for instant display
+  customers = JSON.parse(localStorage.getItem('rt_customers') || '[]');
+  // Firebase listener in startFirebaseListeners() handles real-time updates
 }
  
 async function saveCustomer(cust) {
