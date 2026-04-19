@@ -1,3 +1,6 @@
+Sw · JS
+Copy
+
 // Rishabh Traders — Service Worker v1
 const CACHE_NAME = 'rishabh-traders-v1';
  
