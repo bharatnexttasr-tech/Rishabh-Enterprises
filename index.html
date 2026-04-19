@@ -40,29 +40,29 @@
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; overflow-x:hidden; }
 .app { max-width:480px; margin:0 auto; min-height:100vh; position:relative; }
-
+ 
 /* ── Top Header ── */
 .header { background:linear-gradient(135deg,#006064,#00BCD4); color:#fff; padding:16px 16px 12px; position:sticky; top:0; z-index:100; }
 .header-top { display:flex; align-items:center; justify-content:space-between; }
 .header h1 { font-family:'Baloo 2',cursive; font-size:1.25rem; font-weight:800; line-height:1; }
 .header .subtitle { font-size:0.7rem; opacity:0.85; margin-top:1px; }
 .header-date { font-size:0.72rem; background:rgba(255,255,255,0.2); padding:4px 10px; border-radius:20px; }
-
+ 
 /* ── Bottom Nav ── */
 .bottom-nav { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; background:#fff; border-top:2px solid var(--border); display:flex; z-index:200; }
 .nav-btn { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 4px 12px; cursor:pointer; border:none; background:none; color:var(--text2); font-size:0.62rem; font-family:'Noto Sans',sans-serif; font-weight:500; transition:color 0.15s; }
 .nav-btn .ico { font-size:1.4rem; line-height:1; }
 .nav-btn.active { color:var(--cyan); }
 .nav-btn.active .ico { transform:scale(1.1); }
-
+ 
 /* ── Pages ── */
 .page { display:none; padding:12px 12px calc(var(--bottom-h) + 16px); min-height:calc(100vh - 56px); }
 .page.active { display:block; }
-
+ 
 /* ── Cards ── */
 .card { background:var(--card); border-radius:var(--radius); padding:14px; margin-bottom:10px; box-shadow:var(--shadow); }
 .card-title { font-family:'Baloo 2',cursive; font-size:0.9rem; font-weight:700; color:var(--text2); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px; }
-
+ 
 /* ── Dashboard ── */
 .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
 .stat-box { background:var(--card); border-radius:var(--radius); padding:14px; box-shadow:var(--shadow); }
@@ -73,7 +73,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .stat-val.orange { color:#00BCD4; }
 .stat-val.gold { color:var(--gold); }
 .stat-sub { font-size:0.68rem; color:var(--text2); margin-top:3px; }
-
+ 
 /* ── Sell Form ── */
 .form-section { margin-bottom:14px; }
 .form-label { font-size:0.75rem; font-weight:700; color:var(--text2); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:6px; display:block; }
@@ -87,33 +87,33 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .drop-name { font-weight:600; font-size:0.9rem; }
 .drop-meta { font-size:0.72rem; color:var(--text2); margin-top:2px; }
 .drop-empty { padding:14px; text-align:center; color:var(--text2); font-size:0.85rem; }
-
+ 
 .selected-product { background:#E0F7FA; border:2px solid #00BCD4; border-radius:10px; padding:12px 14px; margin-bottom:12px; position:relative; }
 .sel-name { font-weight:700; font-size:1rem; }
 .sel-meta { font-size:0.75rem; color:var(--text2); margin-top:3px; }
 .sel-clear { position:absolute; top:10px; right:12px; background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--text2); }
-
+ 
 .row2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
 .input-group { display:flex; flex-direction:column; gap:6px; }
-
+ 
 .pay-btns { display:flex; gap:8px; }
 .pay-btn { flex:1; padding:11px 6px; border:2px solid var(--border); border-radius:10px; background:#fff; font-size:0.82rem; font-weight:600; cursor:pointer; transition:all 0.15s; text-align:center; }
 .pay-btn.active { border-color:#006064; background:#006064; color:#fff; }
-
+ 
 .profit-preview { background:var(--green-light); border:1.5px solid var(--green); border-radius:10px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
 .profit-label { font-size:0.75rem; font-weight:700; color:var(--green); text-transform:uppercase; }
 .profit-val { font-family:'Baloo 2',cursive; font-size:1.4rem; font-weight:800; color:var(--green); }
-
+ 
 .btn-submit { width:100%; padding:15px; background:var(--cyan); color:#fff; border:none; border-radius:12px; font-size:1.05rem; font-weight:700; font-family:'Baloo 2',cursive; cursor:pointer; letter-spacing:0.3px; transition:background 0.15s; }
 .btn-submit:active { background:var(--cyan-light); }
 .btn-submit:disabled { background:#ccc; cursor:default; }
-
+ 
 /* ── Stock Page ── */
 .cat-filter { display:flex; gap:7px; overflow-x:auto; padding-bottom:4px; margin-bottom:12px; scrollbar-width:none; }
 .cat-filter::-webkit-scrollbar { display:none; }
 .cat-chip { white-space:nowrap; padding:7px 14px; border-radius:20px; border:2px solid var(--border); background:#fff; font-size:0.75rem; font-weight:600; cursor:pointer; color:var(--text2); transition:all 0.12s; }
 .cat-chip.active { border-color:#00BCD4; background:#006064; color:#fff; }
-
+ 
 .stock-item { display:flex; align-items:center; gap:10px; padding:11px 12px; background:#fff; border-radius:10px; margin-bottom:8px; box-shadow:0 1px 6px rgba(0,0,0,0.06); border-left:4px solid var(--border); }
 .stock-item.low { border-left-color:var(--red); }
 .stock-item.ok { border-left-color:var(--green); }
@@ -124,7 +124,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .si-stock { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:700; }
 .si-unit { font-size:0.65rem; color:var(--text2); }
 .si-edit { background:#E0F7FA; border:none; border-radius:7px; padding:6px 10px; font-size:0.75rem; font-weight:600; color:#006064; cursor:pointer; margin-left:8px; }
-
+ 
 /* ── Add Stock Modal ── */
 .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:1000; justify-content:flex-end; flex-direction:column; align-items:stretch; }
 .modal-overlay.open { display:flex; }
@@ -133,12 +133,12 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .modal-title { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:800; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; }
 .modal-close { background:none; border:none; font-size:1.3rem; cursor:pointer; color:var(--text2); }
 .modal-form { display:flex; flex-direction:column; gap:12px; }
-
+ 
 /* ── Reports ── */
 .report-filter { display:flex; gap:8px; margin-bottom:14px; }
 .period-btn { flex:1; padding:10px; border:2px solid var(--border); border-radius:10px; background:#fff; font-size:0.82rem; font-weight:600; cursor:pointer; text-align:center; transition:all 0.12s; }
 .period-btn.active { border-color:#006064; background:#006064; color:#fff; }
-
+ 
 .report-summary { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:12px; }
 .rs-box { background:#fff; border-radius:10px; padding:12px 10px; text-align:center; box-shadow:var(--shadow); }
 .rs-val { font-family:'Baloo 2',cursive; font-size:1.15rem; font-weight:800; }
@@ -146,7 +146,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .rs-val.o { color:#00BCD4; }
 .rs-val.b { color:#3B82F6; }
 .rs-lbl { font-size:0.63rem; color:var(--text2); font-weight:600; margin-top:3px; text-transform:uppercase; }
-
+ 
 .sale-row { display:flex; align-items:flex-start; gap:10px; padding:11px 12px; background:#fff; border-radius:10px; margin-bottom:7px; box-shadow:0 1px 6px rgba(0,0,0,0.05); }
 .sr-ico { font-size:1.3rem; width:28px; flex-shrink:0; text-align:center; }
 .sr-info { flex:1; min-width:0; }
@@ -156,7 +156,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .sr-profit { font-family:'Baloo 2',cursive; font-size:1rem; font-weight:700; color:var(--green); }
 .sr-sale { font-size:0.75rem; color:var(--text2); margin-top:2px; }
 .sr-del { background:none; border:none; font-size:1rem; cursor:pointer; color:var(--red); margin-left:6px; padding:4px; }
-
+ 
 .bill-sent-badge { display:inline-block; font-size:0.6rem; font-weight:700; padding:2px 7px; border-radius:20px; background:#E0F7FA; color:#006064; border:1px solid #00BCD4; margin-left:5px; }
 .bill-checkbox { width:18px; height:18px; accent-color:#006064; cursor:pointer; flex-shrink:0; }
 .bill-select-bar { display:none; background:#006064; color:#fff; padding:10px 14px; border-radius:10px; margin-bottom:10px; align-items:center; justify-content:space-between; }
@@ -165,14 +165,14 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .pay-badge.cash { background:#E8F5E9; color:#2E7D32; }
 .pay-badge.upi { background:#E3F2FD; color:#1565C0; }
 .pay-badge.credit { background:#FFF3E0; color:#E65100; }
-
+ 
 .export-btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:13px; background:#00695C; color:#fff; border:none; border-radius:12px; font-size:0.9rem; font-weight:700; font-family:'Baloo 2',cursive; cursor:pointer; margin-top:12px; }
-
+ 
 /* ── Stock Add Button ── */
 .fab { position:fixed; bottom:calc(var(--bottom-h) + 16px); right:16px; width:52px; height:52px; border-radius:50%; background:var(--cyan); color:#fff; border:none; font-size:1.6rem; cursor:pointer; box-shadow:0 4px 16px rgba(0,188,212,0.4); display:none; align-items:center; justify-content:center; z-index:150; transition:transform 0.15s; }
 .fab:active { transform:scale(0.93); }
 .fab.show { display:flex; }
-
+ 
 /* ── Misc ── */
 .empty-state { text-align:center; padding:40px 20px; color:var(--text2); }
 .empty-state .big-ico { font-size:3rem; margin-bottom:10px; }
@@ -266,19 +266,19 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 </head>
 <body>
 <div class="app">
-
+ 
 <!-- AUTH SCREEN (Sign Up / Login) -->
 <div class="auth-screen" id="authScreen">
   <div class="auth-card">
     <div class="auth-logo">🛍️</div>
     <div class="auth-title">Rishabh Traders</div>
     <div class="auth-sub">Shop Management App</div>
-
+ 
     <div class="auth-tab-row">
       <div class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Login</div>
       <div class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')">Sign Up</div>
     </div>
-
+ 
     <!-- Step: Phone Entry -->
     <div class="auth-step show" id="stepPhone">
       <label class="form-label">Mobile Number</label>
@@ -296,7 +296,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
       <div class="auth-err" id="phoneErr"></div>
       <button class="auth-btn" onclick="sendOTP()">Send OTP</button>
     </div>
-
+ 
     <!-- Step: OTP Entry -->
     <div class="auth-step" id="stepOTP">
       <div style="text-align:center;font-size:0.82rem;color:#666;margin-bottom:12px;">OTP sent to <b id="otpSentTo"></b></div>
@@ -314,7 +314,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
       <button class="auth-back" onclick="backToPhone()">← Change number</button>
       <button class="auth-back" onclick="resendOTP()" id="resendBtn" style="display:none;">Resend OTP</button>
     </div>
-
+ 
     <!-- Step: Shop Setup (new users only) -->
     <div class="auth-step" id="stepSetup">
       <div style="text-align:center;font-size:0.9rem;font-weight:700;color:#006064;margin-bottom:12px;">✅ Phone Verified!</div>
@@ -327,7 +327,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <!-- OWNER INVITE CODE MODAL -->
 <div class="modal-overlay" id="inviteCodeModal">
   <div class="modal-sheet">
@@ -340,7 +340,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     <button class="btn-submit" onclick="generateInviteCode()">➕ Generate New Code</button>
   </div>
 </div>
-
+ 
 <!-- LOGIN SCREEN -->
 <div class="login-screen" id="loginScreen">
   <div class="login-card">
@@ -385,14 +385,14 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <!-- OWNER BADGE (logout) -->
 <div class="owner-badge" id="ownerBadge" style="display:none;">
   <span id="userAvatarBadge" onclick="openUserMenu()" style="cursor:pointer;">👤</span>
   &nbsp;
   <span onclick="logoutUser()" style="cursor:pointer;opacity:0.7;">✕</span>
 </div>
-
+ 
 <!-- USER MENU MODAL -->
 <div class="modal-overlay" id="userMenuModal">
   <div class="modal-sheet">
@@ -408,7 +408,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     <button onclick="logoutUser();" style="width:100%;padding:13px;background:var(--red-light);border:2px solid var(--red);border-radius:10px;font-size:0.88rem;font-weight:700;color:var(--red);cursor:pointer;">🚪 Sign Out</button>
   </div>
 </div>
-
+ 
 <!-- CHANGE PIN MODAL -->
 <div class="modal-overlay" id="changePinModal">
   <div class="modal-sheet">
@@ -434,7 +434,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <!-- FIREBASE SETUP SCREEN -->
 <div class="fb-setup-screen" id="fbSetupScreen">
   <div class="fb-setup-card">
@@ -457,10 +457,10 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     <button class="fb-skip-btn" onclick="skipFirebase()">Skip — Use local storage only</button>
   </div>
 </div>
-
+ 
 <!-- SYNC STATUS BAR -->
 <div class="sync-bar" id="syncBar">⏳ Syncing with cloud...</div>
-
+ 
 <!-- HEADER -->
 <div class="header">
   <div class="header-top">
@@ -471,7 +471,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     <div class="header-date" id="headerDate"></div>
   </div>
 </div>
-
+ 
 <!-- INSTALL BANNER -->
 <div class="install-banner" id="installBanner">
   <div class="ib-ico">📲</div>
@@ -482,9 +482,9 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
   <button class="ib-btn" onclick="triggerInstall()">Install</button>
   <button class="ib-close" onclick="dismissInstall()">✕</button>
 </div>
-
+ 
 <!-- PAGES -->
-
+ 
 <!-- PAGE: HOME -->
 <div class="page active" id="page-home">
   <div class="stat-grid">
@@ -525,16 +525,16 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
       </div>
     </div>
   </div>
-
+ 
   <div class="section-head">Recent Sales</div>
   <div id="recentSales"></div>
 </div>
-
+ 
 <!-- PAGE: SELL -->
 <div class="page" id="page-sell">
   <div class="card">
     <div class="card-title">📝 Record a Sale</div>
-
+ 
     <div class="form-section">
       <label class="form-label">Search Product</label>
       <div class="search-wrap">
@@ -542,9 +542,9 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
         <div class="dropdown" id="sellDropdown" style="display:none;"></div>
       </div>
     </div>
-
+ 
     <div id="selectedProductBox" style="display:none;"></div>
-
+ 
     <div id="sellForm" style="display:none;">
       <div class="form-section">
         <label class="form-label">Quantity</label>
@@ -554,7 +554,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
           <button class="qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
-
+ 
       <div class="row2">
         <div class="input-group">
           <label class="form-label">Sell Price (₹)</label>
@@ -565,7 +565,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
           <input class="form-input" id="costPrice" type="number" inputmode="decimal" placeholder="0" style="background:#f8f8f8;" readonly />
         </div>
       </div>
-
+ 
       <div class="form-section" style="margin-top:12px;">
         <label class="form-label">Payment Mode</label>
         <div class="pay-btns">
@@ -574,17 +574,17 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
           <button class="pay-btn" onclick="setPayMode(this,'credit')">📒 Credit</button>
         </div>
       </div>
-
+ 
       <div class="profit-preview" id="profitPreview">
         <span class="profit-label">Profit</span>
         <span class="profit-val" id="profitAmt">₹0</span>
       </div>
-
+ 
       <button class="btn-submit" onclick="recordSale()">✅ Record Sale</button>
     </div>
   </div>
 </div>
-
+ 
 <!-- PAGE: STOCK -->
 <div class="page" id="page-stock">
   <div style="display:flex;gap:8px;margin-bottom:10px;">
@@ -594,7 +594,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
   <div class="cat-filter" id="catFilter"></div>
   <div id="stockList"></div>
 </div>
-
+ 
 <!-- PAGE: REPORTS -->
 <div class="page" id="page-report">
   <div class="bill-select-bar" id="billSelectBar">
@@ -623,7 +623,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
       </div>
     </div>
   </div>
-
+ 
   <div class="report-summary" id="reportSummary"></div>
   <div id="reportPayBreak" style="margin-bottom:12px;"></div>
   <div id="reportList"></div>
@@ -633,7 +633,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
   <button class="export-btn" style="margin-top:0;background:#0097A7;font-size:0.78rem;" onclick="openBillModal()">🧾 Summary</button>
 </div>
 </div>
-
+ 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
   <button class="nav-btn active" onclick="navigate('home',this)">
@@ -649,10 +649,10 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     <span class="ico">📊</span>Report
   </button>
 </div>
-
+ 
 <!-- FAB for adding stock -->
 <button class="fab" id="stockFab" onclick="openNewProduct()">＋</button>
-
+ 
 <!-- ADD STOCK MODAL -->
 <div class="modal-overlay" id="addStockModal">
   <div class="modal-sheet">
@@ -683,10 +683,10 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
-
+ 
 <!-- EDIT SALE MODAL -->
 <div class="modal-overlay" id="editSaleModal">
   <div class="modal-sheet">
@@ -725,7 +725,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <!-- CUSTOMER NAME MODAL -->
 <div class="modal-overlay" id="customerNameModal">
   <div class="modal-sheet">
@@ -750,7 +750,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <!-- BILL MODAL (summary) -->
 <div class="modal-overlay" id="billModal">
   <div class="modal-sheet">
@@ -765,7 +765,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <!-- ADD NEW PRODUCT MODAL -->
 <div class="modal-overlay" id="newProductModal">
   <div class="modal-sheet">
@@ -826,13 +826,13 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
     </div>
   </div>
 </div>
-
+ 
 <script>
 // ══════════════════════════════════════════
 //  MASTER PRODUCT DATA
 // ══════════════════════════════════════════
 const MASTER_PRODUCTS = [{"id":1,"cat":"PLASTIC FURNITURE","name":"Nice circle stool","code":"PF001","cost":145.0,"sell":181,"stock":0,"unit":"Pcs"},{"id":2,"cat":"PLASTIC FURNITURE","name":"Gn round stool","code":"PF002","cost":225.0,"sell":281,"stock":0,"unit":"Pcs"},{"id":3,"cat":"PLASTIC FURNITURE","name":"Nice victory chair","code":"PF003","cost":510.0,"sell":638,"stock":0,"unit":"Pcs"},{"id":4,"cat":"PLASTIC FURNITURE","name":"Nice delight chair","code":"PF004","cost":585.0,"sell":731,"stock":0,"unit":"Pcs"},{"id":5,"cat":"PLASTIC FURNITURE","name":"Nice trendy chair","code":"PF005","cost":510.0,"sell":638,"stock":0,"unit":"Pcs"},{"id":6,"cat":"PLASTIC FURNITURE","name":"Hero boom chair","code":"PF006","cost":205.0,"sell":256,"stock":0,"unit":"Pcs"},{"id":7,"cat":"PLASTIC FURNITURE","name":"Hero ultima chair","code":"PF007","cost":205.0,"sell":256,"stock":0,"unit":"Pcs"},{"id":8,"cat":"PLASTIC FURNITURE","name":"Nice decore chair","code":"PF008","cost":470.0,"sell":588,"stock":0,"unit":"Pcs"},{"id":9,"cat":"PLASTIC FURNITURE","name":"Nice elegent chair","code":"PF009","cost":350.0,"sell":438,"stock":0,"unit":"Pcs"},{"id":10,"cat":"PLASTIC FURNITURE","name":"Nice orbit chair","code":"PF010","cost":275.0,"sell":344,"stock":0,"unit":"Pcs"},{"id":11,"cat":"PLASTIC FURNITURE","name":"Chair prime exclutive","code":"PF011","cost":340.0,"sell":425,"stock":0,"unit":"Pcs"},{"id":12,"cat":"PLASTIC FURNITURE","name":"Chair choice 1000","code":"PF012","cost":415.0,"sell":519,"stock":0,"unit":"Pcs"},{"id":13,"cat":"PLASTIC FURNITURE","name":"Chair S model net back","code":"PF013","cost":1250.0,"sell":1562,"stock":0,"unit":"Pcs"},{"id":14,"cat":"PLASTIC FURNITURE","name":"Nice dhoom chair","code":"PF014","cost":225.0,"sell":281,"stock":0,"unit":"Pcs"},{"id":15,"cat":"PLASTIC FURNITURE","name":"Nice lotus chair","code":"PF015","cost":290.0,"sell":362,"stock":0,"unit":"Pcs"},{"id":16,"cat":"PLASTIC FURNITURE","name":"Hero galaxy chair","code":"PF016","cost":180.0,"sell":225,"stock":0,"unit":"Pcs"},{"id":17,"cat":"PLASTIC FURNITURE","name":"Gn relaxo baby chair","code":"PF017","cost":205.0,"sell":256,"stock":0,"unit":"Pcs"},{"id":18,"cat":"PLASTIC FURNITURE","name":"Gn rocky baby chair","code":"PF018","cost":200.0,"sell":250,"stock":0,"unit":"Pcs"},{"id":19,"cat":"PLASTIC FURNITURE","name":"Nice dolphin baby chair","code":"PF019","cost":135.0,"sell":169,"stock":0,"unit":"Pcs"},{"id":20,"cat":"PLASTIC FURNITURE","name":"Nice joker baby chair","code":"PF020","cost":105.0,"sell":131,"stock":0,"unit":"Pcs"},{"id":21,"cat":"PLASTIC FURNITURE","name":"Monty panda stool (S)","code":"PF021","cost":158.65,"sell":198,"stock":0,"unit":"Pcs"},{"id":22,"cat":"PLASTIC FURNITURE","name":"Monty panda stool (B)","code":"PF022","cost":215.0,"sell":269,"stock":0,"unit":"Pcs"},{"id":23,"cat":"PLASTIC FURNITURE","name":"Steel stool","code":"PF023","cost":430.0,"sell":538,"stock":0,"unit":"Pcs"},{"id":24,"cat":"STORAGE SOLUTIONS","name":"Monty kitchen rack-2","code":"SS001","cost":83.6,"sell":104,"stock":0,"unit":"Pcs"},{"id":25,"cat":"STORAGE SOLUTIONS","name":"Monty kitchen rack-3","code":"SS002","cost":121.6,"sell":152,"stock":0,"unit":"Pcs"},{"id":26,"cat":"STORAGE SOLUTIONS","name":"Monty store fresh set","code":"SS003","cost":241.3,"sell":302,"stock":0,"unit":"Set"},{"id":27,"cat":"STORAGE SOLUTIONS","name":"Joyful store king 3 set","code":"SS004","cost":309.6,"sell":387,"stock":0,"unit":"Set"},{"id":28,"cat":"STORAGE SOLUTIONS","name":"Joyful store max 3 set","code":"SS005","cost":299.7,"sell":375,"stock":0,"unit":"Set"},{"id":29,"cat":"STORAGE SOLUTIONS","name":"Royal choice set","code":"SS006","cost":220.0,"sell":275,"stock":0,"unit":"Set"},{"id":30,"cat":"STORAGE SOLUTIONS","name":"Sonet set","code":"SS007","cost":80.0,"sell":100,"stock":0,"unit":"Set"},{"id":31,"cat":"STORAGE SOLUTIONS","name":"Watsapp big 3 kg","code":"SS008","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":32,"cat":"STORAGE SOLUTIONS","name":"N.p. classic 3000","code":"SS009","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":33,"cat":"STORAGE SOLUTIONS","name":"Monty corner rack","code":"SS010","cost":160.0,"sell":200,"stock":0,"unit":"Pcs"},{"id":34,"cat":"STORAGE SOLUTIONS","name":"Monty laundry basket","code":"SS011","cost":304.0,"sell":380,"stock":0,"unit":"Pcs"},{"id":35,"cat":"STORAGE SOLUTIONS","name":"Monty veg jali 3(B)","code":"SS012","cost":188.0,"sell":235,"stock":0,"unit":"Pcs"},{"id":36,"cat":"STORAGE SOLUTIONS","name":"Monty veg jali 4(B)","code":"SS013","cost":235.0,"sell":294,"stock":0,"unit":"Pcs"},{"id":37,"cat":"STORAGE SOLUTIONS","name":"Monty steller 3 (B)","code":"SS014","cost":298.0,"sell":372,"stock":0,"unit":"Pcs"},{"id":38,"cat":"STORAGE SOLUTIONS","name":"Monty steller 4 (B)","code":"SS015","cost":392.0,"sell":490,"stock":0,"unit":"Pcs"},{"id":39,"cat":"STORAGE SOLUTIONS","name":"Monty steller 3 (S)","code":"SS016","cost":209.0,"sell":261,"stock":0,"unit":"Pcs"},{"id":40,"cat":"STORAGE SOLUTIONS","name":"Monty steller 4 (S)","code":"SS017","cost":287.0,"sell":359,"stock":0,"unit":"Pcs"},{"id":41,"cat":"STORAGE SOLUTIONS","name":"Veer drawer 2","code":"SS018","cost":425.0,"sell":531,"stock":0,"unit":"Pcs"},{"id":42,"cat":"STORAGE SOLUTIONS","name":"Aristo drawer 4 (B)","code":"SS019","cost":415.0,"sell":519,"stock":0,"unit":"Pcs"},{"id":43,"cat":"STORAGE SOLUTIONS","name":"Aristo drawer 3 (S)","code":"SS020","cost":105.0,"sell":131,"stock":0,"unit":"Pcs"},{"id":44,"cat":"STORAGE SOLUTIONS","name":"Montyflowerbasket(B)","code":"SS021","cost":218.0,"sell":272,"stock":0,"unit":"Pcs"},{"id":45,"cat":"STORAGE SOLUTIONS","name":"Montyflowerbasket(S)","code":"SS022","cost":127.0,"sell":159,"stock":0,"unit":"Pcs"},{"id":46,"cat":"STORAGE SOLUTIONS","name":"Aristo Misty 111","code":"SS023","cost":24.0,"sell":30,"stock":0,"unit":"Pcs"},{"id":47,"cat":"STORAGE SOLUTIONS","name":"Aristo Misty 222","code":"SS024","cost":27.0,"sell":34,"stock":0,"unit":"Pcs"},{"id":48,"cat":"STORAGE SOLUTIONS","name":"Aristovelvetbasket111","code":"SS025","cost":15.0,"sell":19,"stock":0,"unit":"Pcs"},{"id":49,"cat":"STORAGE SOLUTIONS","name":"Aristovelvetbasket222","code":"SS026","cost":32.0,"sell":40,"stock":0,"unit":"Pcs"},{"id":50,"cat":"STORAGE SOLUTIONS","name":"Aristovelvetbasket333","code":"SS027","cost":54.0,"sell":68,"stock":0,"unit":"Pcs"},{"id":51,"cat":"STORAGE SOLUTIONS","name":"Nakodasilkybasket111","code":"SS028","cost":92.0,"sell":115,"stock":0,"unit":"Pcs"},{"id":52,"cat":"STORAGE SOLUTIONS","name":"Aristosolitairebasket333","code":"SS029","cost":141.0,"sell":176,"stock":0,"unit":"Pcs"},{"id":53,"cat":"STORAGE SOLUTIONS","name":"Aristo Luxor basket 111","code":"SS030","cost":32.0,"sell":40,"stock":0,"unit":"Pcs"},{"id":54,"cat":"STORAGE SOLUTIONS","name":"Aristo apple basket (S)","code":"SS031","cost":24.0,"sell":30,"stock":0,"unit":"Pcs"},{"id":55,"cat":"STORAGE SOLUTIONS","name":"Aristo apple basket (M)","code":"SS032","cost":36.0,"sell":45,"stock":0,"unit":"Pcs"},{"id":56,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 33","code":"SS033","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":57,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 44","code":"SS034","cost":14.0,"sell":18,"stock":0,"unit":"Pcs"},{"id":58,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 55","code":"SS035","cost":19.0,"sell":24,"stock":0,"unit":"Pcs"},{"id":59,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 66","code":"SS036","cost":29.0,"sell":36,"stock":0,"unit":"Pcs"},{"id":60,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 77","code":"SS037","cost":42.0,"sell":52,"stock":0,"unit":"Pcs"},{"id":61,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 88","code":"SS038","cost":59.0,"sell":74,"stock":0,"unit":"Pcs"},{"id":62,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 99","code":"SS039","cost":83.0,"sell":104,"stock":0,"unit":"Pcs"},{"id":63,"cat":"STORAGE SOLUTIONS","name":"Monty keepar no. 101","code":"SS040","cost":106.0,"sell":132,"stock":0,"unit":"Pcs"},{"id":64,"cat":"STORAGE SOLUTIONS","name":"Monty system box 3 (6)","code":"SS041","cost":80.0,"sell":100,"stock":0,"unit":"Pcs"},{"id":65,"cat":"STORAGE SOLUTIONS","name":"Jombo box 555","code":"SS042","cost":60.0,"sell":75,"stock":0,"unit":"Pcs"},{"id":66,"cat":"STORAGE SOLUTIONS","name":"Aristo super box 1","code":"SS043","cost":22.0,"sell":28,"stock":0,"unit":"Pcs"},{"id":67,"cat":"STORAGE SOLUTIONS","name":"Aristo super box 2","code":"SS044","cost":27.0,"sell":34,"stock":0,"unit":"Pcs"},{"id":68,"cat":"STORAGE SOLUTIONS","name":"Aristo super box 3","code":"SS045","cost":48.0,"sell":60,"stock":0,"unit":"Pcs"},{"id":69,"cat":"STORAGE SOLUTIONS","name":"Aristo super box 4","code":"SS046","cost":66.0,"sell":82,"stock":0,"unit":"Pcs"},{"id":70,"cat":"STORAGE SOLUTIONS","name":"Aristo super box 5","code":"SS047","cost":99.0,"sell":124,"stock":0,"unit":"Pcs"},{"id":71,"cat":"STORAGE SOLUTIONS","name":"Monty perfect no. 11","code":"SS048","cost":23.0,"sell":29,"stock":0,"unit":"Pcs"},{"id":72,"cat":"STORAGE SOLUTIONS","name":"Right konark no. 33","code":"SS049","cost":10.0,"sell":12,"stock":0,"unit":"Pcs"},{"id":73,"cat":"STORAGE SOLUTIONS","name":"Lasvegas cont. 7 in 1","code":"SS050","cost":240.0,"sell":300,"stock":0,"unit":"Set"},{"id":74,"cat":"STORAGE SOLUTIONS","name":"Lasvegas cont. 9 in 1","code":"SS051","cost":170.0,"sell":212,"stock":0,"unit":"Set"},{"id":75,"cat":"STORAGE SOLUTIONS","name":"Spi drum 30 ltr.","code":"SS052","cost":110.0,"sell":138,"stock":0,"unit":"Pcs"},{"id":76,"cat":"STORAGE SOLUTIONS","name":"Monty master tray 333","code":"SS053","cost":79.0,"sell":99,"stock":0,"unit":"Pcs"},{"id":77,"cat":"STORAGE SOLUTIONS","name":"Spi round basket","code":"SS054","cost":9.0,"sell":11,"stock":0,"unit":"Pcs"},{"id":78,"cat":"STORAGE SOLUTIONS","name":"Spi square basket","code":"SS055","cost":9.0,"sell":11,"stock":0,"unit":"Pcs"},{"id":79,"cat":"STORAGE SOLUTIONS","name":"Spi oval basket","code":"SS056","cost":9.0,"sell":11,"stock":0,"unit":"Pcs"},{"id":80,"cat":"STORAGE SOLUTIONS","name":"Spi aliya mini basket","code":"SS057","cost":9.0,"sell":11,"stock":0,"unit":"Pcs"},{"id":81,"cat":"STORAGE SOLUTIONS","name":"Spi oval mini basket","code":"SS058","cost":9.0,"sell":11,"stock":0,"unit":"Pcs"},{"id":82,"cat":"STORAGE SOLUTIONS","name":"Spark medium basket","code":"SS059","cost":19.0,"sell":24,"stock":0,"unit":"Pcs"},{"id":83,"cat":"STORAGE SOLUTIONS","name":"Aristo Oreo 111 basket","code":"SS060","cost":18.0,"sell":22,"stock":0,"unit":"Pcs"},{"id":84,"cat":"STORAGE SOLUTIONS","name":"Spi jio mini basket","code":"SS061","cost":9.0,"sell":11,"stock":0,"unit":"Pcs"},{"id":85,"cat":"STORAGE SOLUTIONS","name":"Ola basket 1st","code":"SS062","cost":15.0,"sell":19,"stock":0,"unit":"Pcs"},{"id":86,"cat":"STORAGE SOLUTIONS","name":"Ola basket 2nd","code":"SS063","cost":10.0,"sell":12,"stock":0,"unit":"Pcs"},{"id":87,"cat":"STORAGE SOLUTIONS","name":"Spi bartan jali small","code":"SS064","cost":17.0,"sell":21,"stock":0,"unit":"Pcs"},{"id":88,"cat":"STORAGE SOLUTIONS","name":"Julei basket","code":"SS065","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":89,"cat":"STORAGE SOLUTIONS","name":"Basket mango with cap","code":"SS066","cost":18.0,"sell":22,"stock":0,"unit":"Pcs"},{"id":90,"cat":"STORAGE SOLUTIONS","name":"Bartan jali big","code":"SS067","cost":35.0,"sell":44,"stock":0,"unit":"Pcs"},{"id":91,"cat":"STORAGE SOLUTIONS","name":"Colour basket","code":"SS068","cost":15.0,"sell":19,"stock":0,"unit":"Pcs"},{"id":92,"cat":"STORAGE SOLUTIONS","name":"Nakoda Kappa 111","code":"SS069","cost":75.0,"sell":94,"stock":0,"unit":"Pcs"},{"id":93,"cat":"STORAGE SOLUTIONS","name":"Transparent storage box","code":"SS070","cost":650.0,"sell":812,"stock":2,"unit":"Pcs"},{"id":94,"cat":"STORAGE SOLUTIONS","name":"Aristo Susan basket","code":"SS071","cost":52.0,"sell":65,"stock":1,"unit":"Pcs"},{"id":95,"cat":"STORAGE SOLUTIONS","name":"Pooja basket","code":"SS072","cost":30.0,"sell":38,"stock":1,"unit":"Pcs"},{"id":96,"cat":"AGRO UTILITY","name":"Rsp tasla","code":"AGU001","cost":33.0,"sell":41,"stock":6,"unit":"Pcs"},{"id":97,"cat":"AGRO UTILITY","name":"The plast world tasla","code":"AGU002","cost":38.0,"sell":48,"stock":7,"unit":"Pcs"},{"id":98,"cat":"AGRO UTILITY","name":"Mark plast tasla","code":"AGU003","cost":60.0,"sell":75,"stock":11,"unit":"Pcs"},{"id":99,"cat":"AGRO UTILITY","name":"Buland tasla 16","code":"AGU004","cost":55.0,"sell":69,"stock":3,"unit":"Pcs"},{"id":100,"cat":"AGRO UTILITY","name":"Monty tasla 16","code":"AGU005","cost":80.0,"sell":100,"stock":6,"unit":"Pcs"},{"id":101,"cat":"AGRO UTILITY","name":"Monty tasla 17","code":"AGU006","cost":90.0,"sell":112,"stock":8,"unit":"Pcs"},{"id":102,"cat":"AGRO UTILITY","name":"Buland constro","code":"AGU007","cost":62.0,"sell":78,"stock":2,"unit":"Pcs"},{"id":103,"cat":"AGRO UTILITY","name":"Buland constro +","code":"AGU008","cost":69.0,"sell":86,"stock":13,"unit":"Pcs"},{"id":104,"cat":"AGRO UTILITY","name":"Sardar balshali","code":"AGU009","cost":75.0,"sell":94,"stock":5,"unit":"Pcs"},{"id":105,"cat":"AGRO UTILITY","name":"Ayushman flato 17","code":"AGU010","cost":115.0,"sell":144,"stock":7,"unit":"Pcs"},{"id":106,"cat":"AGRO UTILITY","name":"Ayushman flato 19","code":"AGU011","cost":145.0,"sell":181,"stock":1,"unit":"Pcs"},{"id":107,"cat":"AGRO UTILITY","name":"Sardar bajrang","code":"AGU012","cost":100.0,"sell":125,"stock":4,"unit":"Pcs"},{"id":108,"cat":"AGRO UTILITY","name":"Samrat sarvottam","code":"AGU013","cost":205.0,"sell":256,"stock":2,"unit":"Pcs"},{"id":109,"cat":"AGRO UTILITY","name":"Ap b14","code":"AGU014","cost":22.0,"sell":28,"stock":5,"unit":"Pcs"},{"id":110,"cat":"AGRO UTILITY","name":"Kundan plant. 4","code":"AGU015","cost":11.0,"sell":14,"stock":12,"unit":"Pcs"},{"id":111,"cat":"AGRO UTILITY","name":"Kundan plant.6","code":"AGU016","cost":18.0,"sell":22,"stock":9,"unit":"Pcs"},{"id":112,"cat":"AGRO UTILITY","name":"Amrut plant. 8","code":"AGU017","cost":22.0,"sell":28,"stock":5,"unit":"Pcs"},{"id":113,"cat":"AGRO UTILITY","name":"Kundan plant.8","code":"AGU018","cost":30.0,"sell":38,"stock":2,"unit":"Pcs"},{"id":114,"cat":"AGRO UTILITY","name":"Spi plant.8","code":"AGU019","cost":14.0,"sell":18,"stock":6,"unit":"Pcs"},{"id":115,"cat":"AGRO UTILITY","name":"Monty plant.9","code":"AGU020","cost":37.0,"sell":46,"stock":1,"unit":"Pcs"},{"id":116,"cat":"AGRO UTILITY","name":"Kundan plant.10","code":"AGU021","cost":50.0,"sell":62,"stock":4,"unit":"Pcs"},{"id":117,"cat":"AGRO UTILITY","name":"Monty plant. 11","code":"AGU022","cost":55.0,"sell":69,"stock":3,"unit":"Pcs"},{"id":118,"cat":"AGRO UTILITY","name":"Kundan plant. 12","code":"AGU023","cost":68.0,"sell":85,"stock":9,"unit":"Pcs"},{"id":119,"cat":"AGRO UTILITY","name":"Monty blossom plant. Small","code":"AGU024","cost":137.0,"sell":171,"stock":5,"unit":"Pcs"},{"id":120,"cat":"AGRO UTILITY","name":"Kuppi sonic no. 5","code":"AGU025","cost":5.41,"sell":7,"stock":11,"unit":"Pcs"},{"id":121,"cat":"AGRO UTILITY","name":"Kuppi colore","code":"AGU026","cost":6.0,"sell":8,"stock":0,"unit":"Pcs"},{"id":122,"cat":"AGRO UTILITY","name":"Kuppi sentro no. 6","code":"AGU027","cost":9.0,"sell":11,"stock":9,"unit":"Pcs"},{"id":123,"cat":"KITCHENWARE","name":"Monty frosty jar 300","code":"KW001","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":124,"cat":"KITCHENWARE","name":"Monty frosty jar 500","code":"KW002","cost":47.0,"sell":59,"stock":0,"unit":"Pcs"},{"id":125,"cat":"KITCHENWARE","name":"Monty frosty jar 1000","code":"KW003","cost":53.0,"sell":66,"stock":0,"unit":"Pcs"},{"id":126,"cat":"KITCHENWARE","name":"Monty frosty jar 1500","code":"KW004","cost":78.0,"sell":98,"stock":0,"unit":"Pcs"},{"id":127,"cat":"KITCHENWARE","name":"Monty frosty jar 2000","code":"KW005","cost":104.0,"sell":130,"stock":0,"unit":"Pcs"},{"id":128,"cat":"KITCHENWARE","name":"Monty frosty jar 3000","code":"KW006","cost":125.0,"sell":156,"stock":0,"unit":"Pcs"},{"id":129,"cat":"KITCHENWARE","name":"Monty frosty jar 4000","code":"KW007","cost":139.0,"sell":174,"stock":0,"unit":"Pcs"},{"id":130,"cat":"KITCHENWARE","name":"Spring time 250 6in1","code":"KW008","cost":111.0,"sell":139,"stock":0,"unit":"Set"},{"id":131,"cat":"KITCHENWARE","name":"Spring time 300 3in1","code":"KW009","cost":67.0,"sell":84,"stock":0,"unit":"Set"},{"id":132,"cat":"KITCHENWARE","name":"Spring time 1000 3in1","code":"KW010","cost":120.0,"sell":150,"stock":0,"unit":"Set"},{"id":133,"cat":"KITCHENWARE","name":"Spring time 1750 3in1","code":"KW011","cost":157.0,"sell":196,"stock":0,"unit":"Set"},{"id":134,"cat":"KITCHENWARE","name":"Sunpet jar 30 12in1","code":"KW012","cost":75.0,"sell":94,"stock":0,"unit":"Set"},{"id":135,"cat":"KITCHENWARE","name":"Sunpet jar 50 6in1","code":"KW013","cost":43.5,"sell":54,"stock":0,"unit":"Set"},{"id":136,"cat":"KITCHENWARE","name":"Sunpet jar 100 6in1","code":"KW014","cost":49.5,"sell":62,"stock":0,"unit":"Set"},{"id":137,"cat":"KITCHENWARE","name":"Aristo klik & fresh 201","code":"KW015","cost":43.0,"sell":54,"stock":0,"unit":"Pcs"},{"id":138,"cat":"KITCHENWARE","name":"Aristo breeze 201","code":"KW016","cost":60.0,"sell":75,"stock":0,"unit":"Pcs"},{"id":139,"cat":"KITCHENWARE","name":"Joyful checks 1 4in1","code":"KW017","cost":27.0,"sell":34,"stock":0,"unit":"Set"},{"id":140,"cat":"KITCHENWARE","name":"Nakoda Pluto5003in1","code":"KW018","cost":90.0,"sell":112,"stock":0,"unit":"Set"},{"id":141,"cat":"KITCHENWARE","name":"veer sigma200 3in1","code":"KW019","cost":49.0,"sell":61,"stock":0,"unit":"Set"},{"id":142,"cat":"KITCHENWARE","name":"Veer bingo 150 5in1","code":"KW020","cost":42.0,"sell":52,"stock":0,"unit":"Set"},{"id":143,"cat":"KITCHENWARE","name":"Jaypee taj 800","code":"KW021","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":144,"cat":"KITCHENWARE","name":"Box print","code":"KW022","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":145,"cat":"KITCHENWARE","name":"Jaypee 2000","code":"KW023","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":146,"cat":"KITCHENWARE","name":"Real plast box11 6in1","code":"KW024","cost":39.0,"sell":49,"stock":0,"unit":"Set"},{"id":147,"cat":"KITCHENWARE","name":"Real plast box22 6in1","code":"KW025","cost":48.0,"sell":60,"stock":0,"unit":"Set"},{"id":148,"cat":"KITCHENWARE","name":"Real plast ruby 6in1","code":"KW026","cost":48.0,"sell":60,"stock":0,"unit":"Set"},{"id":149,"cat":"KITCHENWARE","name":"Paras pet 1 12in1","code":"KW027","cost":100.0,"sell":125,"stock":0,"unit":"Set"},{"id":150,"cat":"KITCHENWARE","name":"Box print sm. 6in1","code":"KW028","cost":90.0,"sell":112,"stock":0,"unit":"Set"},{"id":151,"cat":"KITCHENWARE","name":"Box print big 3in1","code":"KW029","cost":120.0,"sell":150,"stock":0,"unit":"Set"},{"id":152,"cat":"KITCHENWARE","name":"Shree masalabox 2nd","code":"KW030","cost":20.0,"sell":25,"stock":0,"unit":"Pcs"},{"id":153,"cat":"KITCHENWARE","name":"Shree masalabox 1st","code":"KW031","cost":50.0,"sell":62,"stock":0,"unit":"Pcs"},{"id":154,"cat":"KITCHENWARE","name":"Masala cont. 9 print","code":"KW032","cost":99.0,"sell":124,"stock":0,"unit":"Pcs"},{"id":155,"cat":"KITCHENWARE","name":"Monty store well4000","code":"KW033","cost":160.0,"sell":200,"stock":0,"unit":"Pcs"},{"id":156,"cat":"KITCHENWARE","name":"Polymer cont. 3in1","code":"KW034","cost":100.0,"sell":125,"stock":0,"unit":"Set"},{"id":157,"cat":"KITCHENWARE","name":"950 ml box","code":"KW035","cost":20.0,"sell":25,"stock":0,"unit":"Pcs"},{"id":158,"cat":"KITCHENWARE","name":"Joyful lock&seal 3in1","code":"KW036","cost":135.0,"sell":169,"stock":0,"unit":"Set"},{"id":159,"cat":"KITCHENWARE","name":"Monty jug plan","code":"KW037","cost":52.25,"sell":65,"stock":0,"unit":"Pcs"},{"id":160,"cat":"KITCHENWARE","name":"Monty jug printed","code":"KW038","cost":61.75,"sell":77,"stock":0,"unit":"Pcs"},{"id":161,"cat":"KITCHENWARE","name":"Joyful blossom jug","code":"KW039","cost":70.0,"sell":88,"stock":0,"unit":"Pcs"},{"id":162,"cat":"KITCHENWARE","name":"Sonal treat tray big","code":"KW040","cost":180.0,"sell":225,"stock":0,"unit":"Pcs"},{"id":163,"cat":"KITCHENWARE","name":"Sonal treat tray med.","code":"KW041","cost":115.0,"sell":144,"stock":0,"unit":"Pcs"},{"id":164,"cat":"KITCHENWARE","name":"Joyful splendor small","code":"KW042","cost":45.0,"sell":56,"stock":0,"unit":"Pcs"},{"id":165,"cat":"KITCHENWARE","name":"Meloware tray","code":"KW043","cost":100.0,"sell":125,"stock":0,"unit":"Pcs"},{"id":166,"cat":"KITCHENWARE","name":"Joyful party small tray","code":"KW044","cost":50.0,"sell":62,"stock":0,"unit":"Pcs"},{"id":167,"cat":"KITCHENWARE","name":"Modern tray no. 3","code":"KW045","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":168,"cat":"KITCHENWARE","name":"Small sumo tray","code":"KW046","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":169,"cat":"KITCHENWARE","name":"Ar plate small 6p.set","code":"KW047","cost":60.0,"sell":75,"stock":0,"unit":"Set"},{"id":170,"cat":"KITCHENWARE","name":"Ar plate big 6p.set","code":"KW048","cost":120.0,"sell":150,"stock":0,"unit":"Set"},{"id":171,"cat":"KITCHENWARE","name":"Monty quarter plate","code":"KW049","cost":125.4,"sell":157,"stock":0,"unit":"Set"},{"id":172,"cat":"KITCHENWARE","name":"Monty quarterplatepr","code":"KW050","cost":159.6,"sell":200,"stock":0,"unit":"Set"},{"id":173,"cat":"KITCHENWARE","name":"Monty full plate 12","code":"KW051","cost":256.5,"sell":321,"stock":0,"unit":"Set"},{"id":174,"cat":"KITCHENWARE","name":"Monty full plate 12 pr.","code":"KW052","cost":319.2,"sell":399,"stock":0,"unit":"Set"},{"id":175,"cat":"KITCHENWARE","name":"Picnic bowl small","code":"KW053","cost":32.0,"sell":40,"stock":0,"unit":"Set"},{"id":176,"cat":"KITCHENWARE","name":"Picnic bowl big","code":"KW054","cost":45.0,"sell":56,"stock":0,"unit":"Set"},{"id":177,"cat":"KITCHENWARE","name":"Jaypee bowl","code":"KW055","cost":33.0,"sell":41,"stock":0,"unit":"Pcs"},{"id":178,"cat":"KITCHENWARE","name":"Kokoba bowl","code":"KW056","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":179,"cat":"KITCHENWARE","name":"Rajbhog bowl","code":"KW057","cost":48.0,"sell":60,"stock":0,"unit":"Set"},{"id":180,"cat":"KITCHENWARE","name":"China bowl","code":"KW058","cost":54.0,"sell":68,"stock":0,"unit":"Set"},{"id":181,"cat":"KITCHENWARE","name":"Plastic bowl","code":"KW059","cost":32.4,"sell":40,"stock":0,"unit":"Set"},{"id":182,"cat":"KITCHENWARE","name":"Mocktail glass","code":"KW060","cost":45.0,"sell":56,"stock":0,"unit":"Set"},{"id":183,"cat":"KITCHENWARE","name":"Bpi glass","code":"KW061","cost":45.0,"sell":56,"stock":0,"unit":"Set"},{"id":184,"cat":"KITCHENWARE","name":"Sierra 4500","code":"KW062","cost":130.0,"sell":162,"stock":0,"unit":"Pcs"},{"id":185,"cat":"KITCHENWARE","name":"Monty water cane 18","code":"KW063","cost":540.0,"sell":675,"stock":0,"unit":"Pcs"},{"id":186,"cat":"KITCHENWARE","name":"Monty aatachalni3in1","code":"KW064","cost":36.0,"sell":45,"stock":0,"unit":"Pcs"},{"id":187,"cat":"KITCHENWARE","name":"Jio aata chalni 2nd (S)","code":"KW065","cost":6.0,"sell":8,"stock":0,"unit":"Pcs"},{"id":188,"cat":"KITCHENWARE","name":"Jio aata chalni 2nd (M)","code":"KW066","cost":6.0,"sell":8,"stock":0,"unit":"Pcs"},{"id":189,"cat":"KITCHENWARE","name":"Jio aata chalni 2nd (B)","code":"KW067","cost":12.5,"sell":16,"stock":0,"unit":"Pcs"},{"id":190,"cat":"KITCHENWARE","name":"Jio aata chalni 1st (M)","code":"KW068","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":191,"cat":"KITCHENWARE","name":"Jio tea strainer","code":"KW069","cost":3.75,"sell":5,"stock":0,"unit":"Pcs"},{"id":192,"cat":"KITCHENWARE","name":"Rocky tea strainer","code":"KW070","cost":7.0,"sell":9,"stock":0,"unit":"Pcs"},{"id":193,"cat":"KITCHENWARE","name":"Optima tea strainer 3","code":"KW071","cost":5.5,"sell":7,"stock":0,"unit":"Pcs"},{"id":194,"cat":"KITCHENWARE","name":"Optima tea strainer 4","code":"KW072","cost":7.0,"sell":9,"stock":0,"unit":"Pcs"},{"id":195,"cat":"KITCHENWARE","name":"Tea strainer steel (S)","code":"KW073","cost":7.5,"sell":9,"stock":0,"unit":"Pcs"},{"id":196,"cat":"KITCHENWARE","name":"Tea strainer steel (B)","code":"KW074","cost":9.0,"sell":11,"stock":0,"unit":"Pcs"},{"id":197,"cat":"KITCHENWARE","name":"Tea strainer kuppi","code":"KW075","cost":5.41,"sell":7,"stock":0,"unit":"Pcs"},{"id":198,"cat":"KITCHENWARE","name":"Jio water filter","code":"KW076","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":199,"cat":"KITCHENWARE","name":"Suraksha water filter","code":"KW077","cost":25.0,"sell":31,"stock":0,"unit":"Pcs"},{"id":200,"cat":"KITCHENWARE","name":"Apex victor glass set","code":"KW078","cost":103.5,"sell":129,"stock":1,"unit":"Pcs"},{"id":201,"cat":"KITCHENWARE","name":"Fridge storage cont.","code":"KW079","cost":100.0,"sell":125,"stock":3,"unit":"Pcs"},{"id":202,"cat":"KITCHENWARE","name":"Royal clip lock storage 3in1","code":"KW080","cost":240.0,"sell":300,"stock":3,"unit":"Pcs"},{"id":203,"cat":"KITCHENWARE","name":"Joyful cont. 3in1","code":"KW081","cost":80.0,"sell":100,"stock":3,"unit":"Pcs"},{"id":204,"cat":"KITCHENWARE","name":"Elegance cont. 5in1","code":"KW082","cost":105.0,"sell":131,"stock":3,"unit":"Pcs"},{"id":205,"cat":"KITCHENWARE","name":"Dream hotpot 2500","code":"KW083","cost":175.0,"sell":219,"stock":2,"unit":"Pcs"},{"id":206,"cat":"KITCHENWARE","name":"Rishabh hotpot 2500","code":"KW084","cost":410.4,"sell":513,"stock":1,"unit":"Pcs"},{"id":207,"cat":"KITCHENWARE","name":"Rishabh hotpot 1700","code":"KW085","cost":311.0,"sell":389,"stock":1,"unit":"Pcs"},{"id":208,"cat":"KITCHENWARE","name":"Jaypee hotpot 1000","code":"KW086","cost":346.0,"sell":432,"stock":1,"unit":"Pcs"},{"id":209,"cat":"KITCHENWARE","name":"Jaypee hotpot 600","code":"KW087","cost":229.0,"sell":286,"stock":1,"unit":"Pcs"},{"id":210,"cat":"KITCHENWARE","name":"Neoveer tea coastar","code":"KW088","cost":50.0,"sell":62,"stock":3,"unit":"Pcs"},{"id":211,"cat":"BATHROOM ACCESSORIES","name":"Kundan pata round","code":"BAC001","cost":65.0,"sell":81,"stock":0,"unit":"Pcs"},{"id":212,"cat":"BATHROOM ACCESSORIES","name":"Kundan pata square","code":"BAC002","cost":65.0,"sell":81,"stock":0,"unit":"Pcs"},{"id":213,"cat":"BATHROOM ACCESSORIES","name":"Sumo lifetime pata","code":"BAC003","cost":40.0,"sell":50,"stock":0,"unit":"Pcs"},{"id":214,"cat":"BATHROOM ACCESSORIES","name":"Bahubali lifetimepata","code":"BAC004","cost":105.0,"sell":131,"stock":0,"unit":"Pcs"},{"id":215,"cat":"BATHROOM ACCESSORIES","name":"Monty puffy pata plan","code":"BAC005","cost":99.0,"sell":124,"stock":0,"unit":"Pcs"},{"id":216,"cat":"BATHROOM ACCESSORIES","name":"Monty rhino pata (M)","code":"BAC006","cost":156.0,"sell":195,"stock":0,"unit":"Pcs"},{"id":217,"cat":"BATHROOM ACCESSORIES","name":"Monty rhino pata (S)","code":"BAC007","cost":133.0,"sell":166,"stock":0,"unit":"Pcs"},{"id":218,"cat":"BATHROOM ACCESSORIES","name":"Monty rufftuff pata(S)","code":"BAC008","cost":113.05,"sell":141,"stock":0,"unit":"Pcs"},{"id":219,"cat":"BATHROOM ACCESSORIES","name":"Monty anchor pata","code":"BAC009","cost":137.0,"sell":171,"stock":0,"unit":"Pcs"},{"id":220,"cat":"BATHROOM ACCESSORIES","name":"Monty Paint bucket10","code":"BAC010","cost":50.15,"sell":63,"stock":0,"unit":"Pcs"},{"id":221,"cat":"BATHROOM ACCESSORIES","name":"Monty Paint bucket15","code":"BAC011","cost":68.0,"sell":85,"stock":0,"unit":"Pcs"},{"id":222,"cat":"BATHROOM ACCESSORIES","name":"Monty Paint bucket20","code":"BAC012","cost":84.15,"sell":105,"stock":0,"unit":"Pcs"},{"id":223,"cat":"BATHROOM ACCESSORIES","name":"Monty Paint bucket25","code":"BAC013","cost":110.0,"sell":138,"stock":0,"unit":"Pcs"},{"id":224,"cat":"BATHROOM ACCESSORIES","name":"Server bucket dual 18","code":"BAC014","cost":163.0,"sell":204,"stock":0,"unit":"Pcs"},{"id":225,"cat":"BATHROOM ACCESSORIES","name":"Server bucket dual 25","code":"BAC015","cost":206.0,"sell":258,"stock":0,"unit":"Pcs"},{"id":226,"cat":"BATHROOM ACCESSORIES","name":"Monty floridbucket13","code":"BAC016","cost":92.0,"sell":115,"stock":0,"unit":"Pcs"},{"id":227,"cat":"BATHROOM ACCESSORIES","name":"Monty bucket lid 13","code":"BAC017","cost":128.0,"sell":160,"stock":0,"unit":"Pcs"},{"id":228,"cat":"BATHROOM ACCESSORIES","name":"Monty bucket lid 16","code":"BAC018","cost":157.0,"sell":196,"stock":0,"unit":"Pcs"},{"id":229,"cat":"BATHROOM ACCESSORIES","name":"Monty bucket ph 18","code":"BAC019","cost":132.0,"sell":165,"stock":0,"unit":"Pcs"},{"id":230,"cat":"BATHROOM ACCESSORIES","name":"Montytubdeepstep60","code":"BAC020","cost":331.0,"sell":414,"stock":0,"unit":"Pcs"},{"id":231,"cat":"BATHROOM ACCESSORIES","name":"Spi tub shakti 35v","code":"BAC021","cost":88.0,"sell":110,"stock":0,"unit":"Pcs"},{"id":232,"cat":"BATHROOM ACCESSORIES","name":"Spi tub shakti 35 blue","code":"BAC022","cost":120.0,"sell":150,"stock":0,"unit":"Pcs"},{"id":233,"cat":"BATHROOM ACCESSORIES","name":"Star tub 45 2nd","code":"BAC023","cost":73.0,"sell":91,"stock":0,"unit":"Pcs"},{"id":234,"cat":"BATHROOM ACCESSORIES","name":"Sardar gajraj 60","code":"BAC024","cost":358.0,"sell":448,"stock":0,"unit":"Pcs"},{"id":235,"cat":"BATHROOM ACCESSORIES","name":"Montyveenamug1000","code":"BAC025","cost":17.1,"sell":21,"stock":0,"unit":"Pcs"},{"id":236,"cat":"BATHROOM ACCESSORIES","name":"Montyveenamug1200","code":"BAC026","cost":20.9,"sell":26,"stock":0,"unit":"Pcs"},{"id":237,"cat":"BATHROOM ACCESSORIES","name":"Montyveenamug1500","code":"BAC027","cost":26.6,"sell":33,"stock":0,"unit":"Pcs"},{"id":238,"cat":"BATHROOM ACCESSORIES","name":"Serverdualmug1500","code":"BAC028","cost":31.35,"sell":39,"stock":0,"unit":"Pcs"},{"id":239,"cat":"BATHROOM ACCESSORIES","name":"Montyfloric mug1000","code":"BAC029","cost":16.0,"sell":20,"stock":0,"unit":"Pcs"},{"id":240,"cat":"BATHROOM ACCESSORIES","name":"Montymug lotus print","code":"BAC030","cost":26.0,"sell":32,"stock":0,"unit":"Pcs"},{"id":241,"cat":"BATHROOM ACCESSORIES","name":"Montymug lotus 1500","code":"BAC031","cost":20.0,"sell":25,"stock":0,"unit":"Pcs"},{"id":242,"cat":"BATHROOM ACCESSORIES","name":"Spi spiral mug 1500","code":"BAC032","cost":10.0,"sell":12,"stock":0,"unit":"Pcs"},{"id":243,"cat":"BATHROOM ACCESSORIES","name":"Mug 2nd 1000","code":"BAC033","cost":7.0,"sell":9,"stock":0,"unit":"Pcs"},{"id":244,"cat":"BATHROOM ACCESSORIES","name":"Mug 1000","code":"BAC034","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":245,"cat":"BATHROOM ACCESSORIES","name":"Mug 1st 1500","code":"BAC035","cost":10.0,"sell":12,"stock":0,"unit":"Pcs"},{"id":246,"cat":"BATHROOM ACCESSORIES","name":"Monty camay s.c.","code":"BAC036","cost":15.0,"sell":19,"stock":0,"unit":"Pcs"},{"id":247,"cat":"BATHROOM ACCESSORIES","name":"Monty s.c. print","code":"BAC037","cost":14.0,"sell":18,"stock":0,"unit":"Pcs"},{"id":248,"cat":"BATHROOM ACCESSORIES","name":"Server s.c.","code":"BAC038","cost":13.0,"sell":16,"stock":0,"unit":"Pcs"},{"id":249,"cat":"BATHROOM ACCESSORIES","name":"Monty 2in1 s.c.","code":"BAC039","cost":13.0,"sell":16,"stock":0,"unit":"Pcs"},{"id":250,"cat":"BATHROOM ACCESSORIES","name":"Monty 3in1 s.c.","code":"BAC040","cost":14.0,"sell":18,"stock":0,"unit":"Pcs"},{"id":251,"cat":"BATHROOM ACCESSORIES","name":"Sonal soap case","code":"BAC041","cost":21.0,"sell":26,"stock":0,"unit":"Pcs"},{"id":252,"cat":"BATHROOM ACCESSORIES","name":"Jsk twins s.c.","code":"BAC042","cost":38.0,"sell":48,"stock":0,"unit":"Pcs"},{"id":253,"cat":"BATHROOM ACCESSORIES","name":"Reliance s.c.","code":"BAC043","cost":16.0,"sell":20,"stock":0,"unit":"Pcs"},{"id":254,"cat":"BATHROOM ACCESSORIES","name":"Riya open s.c.","code":"BAC044","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":255,"cat":"BATHROOM ACCESSORIES","name":"Shree s.c. 1st","code":"BAC045","cost":8.33,"sell":10,"stock":0,"unit":"Pcs"},{"id":256,"cat":"BATHROOM ACCESSORIES","name":"Shree s.c. 2nd","code":"BAC046","cost":6.25,"sell":8,"stock":0,"unit":"Pcs"},{"id":257,"cat":"BATHROOM ACCESSORIES","name":"Soap case","code":"BAC047","cost":8.0,"sell":10,"stock":0,"unit":"Pcs"},{"id":258,"cat":"BATHROOM ACCESSORIES","name":"Pears s.c.","code":"BAC048","cost":15.0,"sell":19,"stock":0,"unit":"Pcs"},{"id":259,"cat":"BATHROOM ACCESSORIES","name":"Vintage s.c. 2in1","code":"BAC049","cost":30.0,"sell":38,"stock":0,"unit":"Pcs"},{"id":260,"cat":"BATHROOM ACCESSORIES","name":"Lufa","code":"BAC050","cost":5.0,"sell":6,"stock":0,"unit":"Pcs"},{"id":261,"cat":"BATHROOM ACCESSORIES","name":"Fair lufa round","code":"BAC051","cost":28.0,"sell":35,"stock":0,"unit":"Pcs"},{"id":262,"cat":"BATHROOM ACCESSORIES","name":"Fair lufa belt","code":"BAC052","cost":28.0,"sell":35,"stock":0,"unit":"Pcs"},{"id":263,"cat":"BATHROOM ACCESSORIES","name":"Fair foot brush 4in1","code":"BAC053","cost":31.0,"sell":39,"stock":0,"unit":"Pcs"},{"id":264,"cat":"BATHROOM ACCESSORIES","name":"Cloth brush black","code":"BAC054","cost":11.0,"sell":14,"stock":0,"unit":"Pcs"},{"id":265,"cat":"BATHROOM ACCESSORIES","name":"Cloth brush wood","code":"BAC055","cost":15.0,"sell":19,"stock":0,"unit":"Pcs"},{"id":266,"cat":"BATHROOM ACCESSORIES","name":"Cloth brush handel","code":"BAC056","cost":28.0,"sell":35,"stock":0,"unit":"Pcs"},{"id":267,"cat":"BATHROOM ACCESSORIES","name":"Jsk dispenser","code":"BAC057","cost":50.0,"sell":62,"stock":0,"unit":"Pcs"},{"id":268,"cat":"BATHROOM ACCESSORIES","name":"Jsk comet 2","code":"BAC058","cost":31.0,"sell":39,"stock":2,"unit":"Pcs"},{"id":269,"cat":"BATHROOM ACCESSORIES","name":"Monty Atlantic holder","code":"BAC059","cost":26.0,"sell":32,"stock":3,"unit":"Pcs"},{"id":270,"cat":"BATHROOM ACCESSORIES","name":"Imperial fill medium","code":"BAC060","cost":35.0,"sell":44,"stock":1,"unit":"Pcs"},{"id":271,"cat":"BATHROOM ACCESSORIES","name":"Accura multipurpose stand","code":"BAC061","cost":58.0,"sell":72,"stock":2,"unit":"Pcs"},{"id":272,"cat":"BATHROOM ACCESSORIES","name":"Ultima multipurpose stand","code":"BAC062","cost":58.0,"sell":72,"stock":2,"unit":"Pcs"},{"id":273,"cat":"BATHROOM ACCESSORIES","name":"Elantra multipurpose stand","code":"BAC063","cost":85.0,"sell":106,"stock":1,"unit":"Pcs"},{"id":274,"cat":"BATHROOM ACCESSORIES","name":"Imperial wonder small","code":"BAC064","cost":19.0,"sell":24,"stock":1,"unit":"Pcs"},{"id":275,"cat":"BATHROOM ACCESSORIES","name":"Imperial filo small","code":"BAC065","cost":18.0,"sell":22,"stock":7,"unit":"Pcs"},{"id":276,"cat":"BATHROOM ACCESSORIES","name":"Neoveer desire big stand","code":"BAC066","cost":30.0,"sell":38,"stock":11,"unit":"Pcs"},{"id":277,"cat":"BATHROOM ACCESSORIES","name":"Nakoda jiva stand","code":"BAC067","cost":19.0,"sell":24,"stock":10,"unit":"Pcs"},{"id":278,"cat":"BATHROOM ACCESSORIES","name":"Lotus stand","code":"BAC068","cost":9.0,"sell":11,"stock":25,"unit":"Pcs"},{"id":279,"cat":"BATHROOM ACCESSORIES","name":"Twin stand","code":"BAC069","cost":11.33,"sell":14,"stock":8,"unit":"Pcs"},{"id":280,"cat":"BATHROOM ACCESSORIES","name":"Panther soap set","code":"BAC070","cost":50.0,"sell":62,"stock":3,"unit":"Pcs"},{"id":281,"cat":"BATHROOM ACCESSORIES","name":"Panther brush holder","code":"BAC071","cost":80.0,"sell":100,"stock":2,"unit":"Pcs"},{"id":282,"cat":"BATHROOM ACCESSORIES","name":"Wind dani0 soap set","code":"BAC072","cost":60.0,"sell":75,"stock":6,"unit":"Pcs"},{"id":283,"cat":"BATHROOM ACCESSORIES","name":"Panther shelf","code":"BAC073","cost":150.0,"sell":188,"stock":4,"unit":"Pcs"},{"id":284,"cat":"BATHROOM ACCESSORIES","name":"She shelf","code":"BAC074","cost":250.0,"sell":312,"stock":2,"unit":"Pcs"},{"id":285,"cat":"BATHROOM ACCESSORIES","name":"Steel shelf set","code":"BAC075","cost":160.0,"sell":200,"stock":4,"unit":"Pcs"},{"id":286,"cat":"BATHROOM ACCESSORIES","name":"Monty basin 14","code":"BAC076","cost":64.0,"sell":80,"stock":2,"unit":"Pcs"},{"id":287,"cat":"FRAMES","name":"Frame heart","code":"FR001","cost":145.0,"sell":181,"stock":3,"unit":"Pcs"},{"id":288,"cat":"FRAMES","name":"Happy time frame","code":"FR002","cost":225.0,"sell":281,"stock":2,"unit":"Pcs"},{"id":289,"cat":"FRAMES","name":"Adiyogi small ET-05","code":"FR003","cost":100.0,"sell":125,"stock":2,"unit":"Pcs"},{"id":290,"cat":"FRAMES","name":"Adiyogi big ET-45","code":"FR004","cost":280.0,"sell":350,"stock":2,"unit":"Pcs"},{"id":291,"cat":"FRAMES","name":"RK ET-71","code":"FR005","cost":300.0,"sell":375,"stock":1,"unit":"Pcs"},{"id":292,"cat":"FRAMES","name":"Ganesh ji frame","code":"FR006","cost":72.0,"sell":90,"stock":1,"unit":"Pcs"},{"id":293,"cat":"FRAMES","name":"Ganesh ji frame with key hanger","code":"FR007","cost":75.0,"sell":94,"stock":1,"unit":"Pcs"},{"id":294,"cat":"FRAMES","name":"Village frame","code":"FR008","cost":135.0,"sell":169,"stock":1,"unit":"Pcs"},{"id":295,"cat":"FRAMES","name":"Ganesh ji frame","code":"FR009","cost":90.0,"sell":112,"stock":1,"unit":"Pcs"},{"id":296,"cat":"FRAMES","name":"Ganesh ji frame 711","code":"FR010","cost":145.0,"sell":181,"stock":1,"unit":"Pcs"},{"id":297,"cat":"FRAMES","name":"RK circle frame","code":"FR011","cost":250.0,"sell":312,"stock":1,"unit":"Pcs"},{"id":298,"cat":"FRAMES","name":"Balaji frame ET-22","code":"FR012","cost":620.0,"sell":775,"stock":1,"unit":"Pcs"},{"id":299,"cat":"FRAMES","name":"Scenery 20\u00d730","code":"FR013","cost":500.0,"sell":625,"stock":2,"unit":"Pcs"},{"id":300,"cat":"FRAMES","name":"Scenery 20\u00d728","code":"FR014","cost":540.0,"sell":675,"stock":1,"unit":"Pcs"},{"id":301,"cat":"FRAMES","name":"Frame RK 18\u00d724","code":"FR015","cost":400.0,"sell":500,"stock":2,"unit":"Pcs"},{"id":302,"cat":"FRAMES","name":"Frame 18\u00d724","code":"FR016","cost":375.0,"sell":469,"stock":2,"unit":"Pcs"},{"id":303,"cat":"FRAMES","name":"Frame Ganesh ji 12\u00d718","code":"FR017","cost":150.0,"sell":188,"stock":2,"unit":"Pcs"},{"id":304,"cat":"FRAMES","name":"Frame 14\u00d720","code":"FR018","cost":120.0,"sell":150,"stock":5,"unit":"Pcs"},{"id":305,"cat":"FRAMES","name":"Scenery 14\u00d720","code":"FR019","cost":220.0,"sell":275,"stock":1,"unit":"Pcs"},{"id":306,"cat":"FRAMES","name":"Frame khatu shyam 12\u00d718","code":"FR020","cost":195.0,"sell":244,"stock":1,"unit":"Pcs"},{"id":307,"cat":"FRAMES","name":"Frame 11\u00d714","code":"FR021","cost":155.0,"sell":194,"stock":1,"unit":"Pcs"},{"id":308,"cat":"CLOCK","name":"Skytouchquartzs8002","code":"CLK001","cost":100.0,"sell":125,"stock":2,"unit":"Pcs"},{"id":309,"cat":"CLOCK","name":"Icon quartz i-020","code":"CLK002","cost":140.0,"sell":175,"stock":2,"unit":"Pcs"},{"id":310,"cat":"CLOCK","name":"Icon quartz i-027","code":"CLK003","cost":100.0,"sell":125,"stock":1,"unit":"Pcs"},{"id":311,"cat":"CLOCK","name":"Skytouchquartzs1204","code":"CLK004","cost":200.0,"sell":250,"stock":1,"unit":"Pcs"},{"id":312,"cat":"CLOCK","name":"Tagson quartz","code":"CLK005","cost":165.0,"sell":206,"stock":1,"unit":"Pcs"},{"id":313,"cat":"CLOCK","name":"Anjali quartz 6457-G","code":"CLK006","cost":330.0,"sell":412,"stock":1,"unit":"Pcs"},{"id":314,"cat":"STATIONERY","name":"Diary","code":"STN001","cost":135.0,"sell":169,"stock":2,"unit":"Pcs"},{"id":315,"cat":"STATIONERY","name":"Diary","code":"STN002","cost":145.0,"sell":181,"stock":1,"unit":"Pcs"},{"id":316,"cat":"STATIONERY","name":"Dairy","code":"STN003","cost":150.0,"sell":188,"stock":1,"unit":"Pcs"},{"id":317,"cat":"STATIONERY","name":"Pen holder","code":"STN004","cost":33.0,"sell":41,"stock":3,"unit":"Pcs"},{"id":318,"cat":"STATIONERY","name":"Writing pad small","code":"STN005","cost":55.0,"sell":69,"stock":6,"unit":"Pcs"},{"id":319,"cat":"STATIONERY","name":"Writing pad big","code":"STN006","cost":225.0,"sell":281,"stock":2,"unit":"Pcs"},{"id":320,"cat":"STATIONERY","name":"White board","code":"STN007","cost":65.0,"sell":81,"stock":4,"unit":"Pcs"},{"id":321,"cat":"BOTTLE","name":"Bottle candy 1000","code":"BTL001","cost":18.0,"sell":22,"stock":0,"unit":"Pcs"},{"id":322,"cat":"BOTTLE","name":"Bottle joyful","code":"BTL002","cost":42.0,"sell":52,"stock":0,"unit":"Pcs"},{"id":323,"cat":"BOTTLE","name":"Monty bottel 6in1","code":"BTL003","cost":115.0,"sell":144,"stock":0,"unit":"Set"},{"id":324,"cat":"BOTTLE","name":"Montybottel6in1narrow","code":"BTL004","cost":115.0,"sell":144,"stock":0,"unit":"Set"},{"id":325,"cat":"BOTTLE","name":"Joyful cool tower4in1","code":"BTL005","cost":163.0,"sell":204,"stock":0,"unit":"Set"},{"id":326,"cat":"BOTTLE","name":"Joyful cool cera 4in1","code":"BTL006","cost":183.0,"sell":229,"stock":0,"unit":"Set"},{"id":327,"cat":"BOTTLE","name":"Monty pp bottel 4in1","code":"BTL007","cost":105.0,"sell":131,"stock":0,"unit":"Set"},{"id":328,"cat":"BOTTLE","name":"Bottle chechmate 1000","code":"BTL008","cost":62.0,"sell":78,"stock":0,"unit":"Pcs"},{"id":329,"cat":"BOTTLE","name":"Bottle space print","code":"BTL009","cost":75.0,"sell":94,"stock":0,"unit":"Pcs"},{"id":330,"cat":"BOTTLE","name":"Bottle steel","code":"BTL010","cost":80.0,"sell":100,"stock":0,"unit":"Pcs"},{"id":331,"cat":"BOTTLE","name":"Bottle print small","code":"BTL011","cost":22.0,"sell":28,"stock":0,"unit":"Pcs"},{"id":332,"cat":"BOTTLE","name":"Bottle chechmate 350","code":"BTL012","cost":51.0,"sell":64,"stock":0,"unit":"Pcs"},{"id":333,"cat":"BOTTLE","name":"Bottle carnival 1000","code":"BTL013","cost":105.0,"sell":131,"stock":0,"unit":"Pcs"},{"id":334,"cat":"BOTTLE","name":"Rishabh school bottle","code":"BTL014","cost":120.0,"sell":150,"stock":0,"unit":"Pcs"},{"id":335,"cat":"BOTTLE","name":"BottleRishabhcoolair(M)","code":"BTL015","cost":83.0,"sell":104,"stock":0,"unit":"Pcs"},{"id":336,"cat":"BOTTLE","name":"BottleRishabh coolstory","code":"BTL016","cost":93.0,"sell":116,"stock":0,"unit":"Pcs"},{"id":337,"cat":"BOTTLE","name":"Ski chess bottle","code":"BTL017","cost":46.0,"sell":58,"stock":0,"unit":"Pcs"},{"id":338,"cat":"BOTTLE","name":"Child bottle 2nd","code":"BTL018","cost":14.0,"sell":18,"stock":0,"unit":"Pcs"},{"id":339,"cat":"BOTTLE","name":"Bottle cold","code":"BTL019","cost":90.0,"sell":112,"stock":0,"unit":"Pcs"},{"id":340,"cat":"BOTTLE","name":"Bottle Milton aqua 1000","code":"BTL020","cost":308.0,"sell":385,"stock":0,"unit":"Pcs"},{"id":341,"cat":"BOTTLE","name":"Bottle Monty platina 500","code":"BTL021","cost":440.0,"sell":550,"stock":0,"unit":"Pcs"},{"id":342,"cat":"BOTTLE","name":"Nice bottle 400","code":"BTL022","cost":35.0,"sell":44,"stock":0,"unit":"Pcs"},{"id":343,"cat":"BOTTLE","name":"Go baby sipper","code":"BTL023","cost":45.0,"sell":56,"stock":0,"unit":"Pcs"},{"id":344,"cat":"GROOMING ESSENTIAL","name":"Nail cutter","code":"GE001","cost":34.0,"sell":42,"stock":10,"unit":"Pcs"},{"id":345,"cat":"GROOMING ESSENTIAL","name":"Nail cutter","code":"GE002","cost":17.5,"sell":22,"stock":9,"unit":"Pcs"},{"id":346,"cat":"GROOMING ESSENTIAL","name":"Dye brush","code":"GE003","cost":5.0,"sell":6,"stock":12,"unit":"Pcs"},{"id":347,"cat":"GROOMING ESSENTIAL","name":"Two side mirror 4","code":"GE004","cost":55.0,"sell":69,"stock":1,"unit":"Pcs"},{"id":348,"cat":"GROOMING ESSENTIAL","name":"Two side mirror 5","code":"GE005","cost":65.0,"sell":81,"stock":2,"unit":"Pcs"},{"id":349,"cat":"GROOMING ESSENTIAL","name":"Eyelash","code":"GE006","cost":5.0,"sell":6,"stock":21,"unit":"Pcs"},{"id":350,"cat":"GROOMING ESSENTIAL","name":"Ishu hair comb","code":"GE007","cost":11.0,"sell":14,"stock":14,"unit":"Pcs"},{"id":351,"cat":"GROOMING ESSENTIAL","name":"Danby comb","code":"GE008","cost":14.0,"sell":18,"stock":12,"unit":"Pcs"},{"id":352,"cat":"GROOMING ESSENTIAL","name":"Lily comb","code":"GE009","cost":9.5,"sell":12,"stock":5,"unit":"Pcs"},{"id":353,"cat":"GROOMING ESSENTIAL","name":"Tiamo comb","code":"GE010","cost":30.75,"sell":38,"stock":3,"unit":"Pcs"},{"id":354,"cat":"GROOMING ESSENTIAL","name":"Hair brush","code":"GE011","cost":70.0,"sell":88,"stock":3,"unit":"Pcs"},{"id":355,"cat":"GROOMING ESSENTIAL","name":"Daatun tooth brush","code":"GE012","cost":20.0,"sell":25,"stock":28,"unit":"Pcs"},{"id":356,"cat":"GROOMING ESSENTIAL","name":"Lotus tooth brush","code":"GE013","cost":30.0,"sell":38,"stock":6,"unit":"Pcs"},{"id":357,"cat":"GROOMING ESSENTIAL","name":"Jar tooth brush","code":"GE014","cost":11.25,"sell":14,"stock":15,"unit":"Pcs"},{"id":358,"cat":"GROOMING ESSENTIAL","name":"Jar tooth brush child","code":"GE015","cost":10.0,"sell":12,"stock":14,"unit":"Pcs"},{"id":359,"cat":"GROOMING ESSENTIAL","name":"Toungue cleaner","code":"GE016","cost":3.5,"sell":4,"stock":13,"unit":"Pcs"},{"id":360,"cat":"GROOMING ESSENTIAL","name":"James Martin perfume","code":"GE017","cost":400.0,"sell":500,"stock":1,"unit":"Pcs"},{"id":361,"cat":"GROOMING ESSENTIAL","name":"St Louis perfume","code":"GE018","cost":135.0,"sell":169,"stock":2,"unit":"Pcs"},{"id":362,"cat":"GROOMING ESSENTIAL","name":"Yara perfume","code":"GE019","cost":90.0,"sell":112,"stock":1,"unit":"Pcs"},{"id":363,"cat":"GROOMING ESSENTIAL","name":"Blue pearl perfume","code":"GE020","cost":85.0,"sell":106,"stock":1,"unit":"Pcs"},{"id":364,"cat":"GROOMING ESSENTIAL","name":"Sandal pefume","code":"GE021","cost":72.0,"sell":90,"stock":2,"unit":"Pcs"},{"id":365,"cat":"GROOMING ESSENTIAL","name":"Joy honey & almond creem","code":"GE022","cost":7.75,"sell":10,"stock":17,"unit":"Pcs"},{"id":366,"cat":"CLEANING ESSENTIAL","name":"Quick clean f.c.","code":"CE001","cost":26.0,"sell":32,"stock":0,"unit":"Pcs"},{"id":367,"cat":"CLEANING ESSENTIAL","name":"Quick clean s.c.","code":"CE002","cost":53.0,"sell":66,"stock":0,"unit":"Pcs"},{"id":368,"cat":"CLEANING ESSENTIAL","name":"Quick clean t.c.","code":"CE003","cost":33.0,"sell":41,"stock":0,"unit":"Pcs"},{"id":369,"cat":"CLEANING ESSENTIAL","name":"Harpota f.c.","code":"CE004","cost":13.0,"sell":16,"stock":0,"unit":"Pcs"},{"id":370,"cat":"CLEANING ESSENTIAL","name":"A1 herbal cleaner","code":"CE005","cost":76.92,"sell":96,"stock":0,"unit":"Pcs"},{"id":371,"cat":"CLEANING ESSENTIAL","name":"Denote Acid","code":"CE006","cost":22.0,"sell":28,"stock":0,"unit":"Pcs"},{"id":372,"cat":"CLEANING ESSENTIAL","name":"Black phynyl","code":"CE007","cost":35.0,"sell":44,"stock":0,"unit":"Pcs"},{"id":373,"cat":"CLEANING ESSENTIAL","name":"Monty swing bin 25","code":"CE008","cost":281.2,"sell":352,"stock":0,"unit":"Pcs"},{"id":374,"cat":"CLEANING ESSENTIAL","name":"Monty swing bin 40","code":"CE009","cost":386.65,"sell":483,"stock":0,"unit":"Pcs"},{"id":375,"cat":"CLEANING ESSENTIAL","name":"Monty padel bin71(B)","code":"CE010","cost":81.0,"sell":101,"stock":0,"unit":"Pcs"},{"id":376,"cat":"CLEANING ESSENTIAL","name":"Monty padel bin71(C)","code":"CE011","cost":102.0,"sell":128,"stock":0,"unit":"Pcs"},{"id":377,"cat":"CLEANING ESSENTIAL","name":"Monty padel bin 71(P)","code":"CE012","cost":118.0,"sell":148,"stock":0,"unit":"Pcs"},{"id":378,"cat":"CLEANING ESSENTIAL","name":"Monty padel bin81(B)","code":"CE013","cost":0,"sell":0,"stock":0,"unit":"Pcs"},{"id":379,"cat":"CLEANING ESSENTIAL","name":"Monty padel bin81(C)","code":"CE014","cost":144.0,"sell":180,"stock":0,"unit":"Pcs"},{"id":380,"cat":"CLEANING ESSENTIAL","name":"Monty padel bin 81(P)","code":"CE015","cost":168.0,"sell":210,"stock":0,"unit":"Pcs"},{"id":381,"cat":"CLEANING ESSENTIAL","name":"Monty padel bin91(B)","code":"CE016","cost":0,"sell":0,"stock":0,"unit":"Pcs"},{"id":382,"cat":"GIFTS ACCESSORIES","name":"Qiang Ren keychain","code":"GA001","cost":50.0,"sell":62,"stock":6,"unit":"Pcs"},{"id":383,"cat":"GIFTS ACCESSORIES","name":"Keychain spinner","code":"GA002","cost":46.0,"sell":58,"stock":1,"unit":"Pcs"},{"id":384,"cat":"GIFTS ACCESSORIES","name":"Keychain doll","code":"GA003","cost":3.75,"sell":5,"stock":12,"unit":"Pcs"},{"id":385,"cat":"GIFTS ACCESSORIES","name":"Keychain","code":"GA004","cost":8.5,"sell":11,"stock":19,"unit":"Pcs"},{"id":386,"cat":"GIFTS ACCESSORIES","name":"Keychain steel","code":"GA005","cost":12.0,"sell":15,"stock":19,"unit":"Pcs"},{"id":387,"cat":"GIFTS ACCESSORIES","name":"Keyring","code":"GA006","cost":18.0,"sell":22,"stock":39,"unit":"Pcs"},{"id":388,"cat":"GIFTS ACCESSORIES","name":"Samkit dryfruit set","code":"GA007","cost":120.0,"sell":150,"stock":3,"unit":"Pcs"},{"id":389,"cat":"GIFTS ACCESSORIES","name":"Samkit dryfruit set","code":"GA008","cost":99.0,"sell":124,"stock":2,"unit":"Pcs"},{"id":390,"cat":"GIFTS ACCESSORIES","name":"Liza dryfruit set","code":"GA009","cost":199.0,"sell":249,"stock":1,"unit":"Pcs"},{"id":391,"cat":"GIFTS ACCESSORIES","name":"Samkit dryfruit set","code":"GA010","cost":140.0,"sell":175,"stock":2,"unit":"Pcs"},{"id":392,"cat":"GIFTS ACCESSORIES","name":"Samkit dryfruit set","code":"GA011","cost":111.0,"sell":139,"stock":1,"unit":"Pcs"},{"id":393,"cat":"GIFTS ACCESSORIES","name":"Top cafe gift set","code":"GA012","cost":45.9,"sell":57,"stock":3,"unit":"Pcs"},{"id":394,"cat":"GIFTS ACCESSORIES","name":"Valentine gift set","code":"GA013","cost":135.9,"sell":170,"stock":2,"unit":"Pcs"},{"id":395,"cat":"GIFTS ACCESSORIES","name":"Coffe dip gift set","code":"GA014","cost":88.2,"sell":110,"stock":1,"unit":"Pcs"},{"id":396,"cat":"GIFTS ACCESSORIES","name":"Alpino gift set","code":"GA015","cost":113.4,"sell":142,"stock":2,"unit":"Pcs"},{"id":397,"cat":"GIFTS ACCESSORIES","name":"White berry gift set","code":"GA016","cost":81.9,"sell":102,"stock":2,"unit":"Pcs"},{"id":398,"cat":"GIFTS ACCESSORIES","name":"Jorden gift set","code":"GA017","cost":110.7,"sell":138,"stock":2,"unit":"Pcs"},{"id":399,"cat":"GIFTS ACCESSORIES","name":"Monty Florence pudding set","code":"GA018","cost":175.0,"sell":219,"stock":1,"unit":"Pcs"}];
-
+ 
 // ══════════════════════════════════════════
 //  STATE + FIREBASE
 // ══════════════════════════════════════════
@@ -851,7 +851,7 @@ let currentPeriod = 'today';
 let stockFilterCat = 'ALL';
 let modalProductId = null;
 let unsubSales = null, unsubStock = null, unsubCustom = null;
-
+ 
 // ── Firebase Setup ────────────────────────
 function connectFirebase() {
   const apiKey    = document.getElementById('fbApiKey').value.trim();
@@ -862,13 +862,13 @@ function connectFirebase() {
   localStorage.setItem('fbConfig', JSON.stringify(cfg));
   initFirebase(cfg);
 }
-
+ 
 function skipFirebase() {
   localStorage.setItem('fbSkipped', '1');
   document.getElementById('fbSetupScreen').classList.remove('show');
   loadLocalState();
 }
-
+ 
 function initFirebase(cfg) {
   try {
     if (!firebase.apps.length) firebase.initializeApp(cfg);
@@ -891,7 +891,7 @@ function initFirebase(cfg) {
     alert('Firebase error: ' + e.message + '\nCheck your config values.');
   }
 }
-
+ 
 // ── User-scoped Firestore path ────────────
 function userCol(collection) {
   if (!currentUser) return null;
@@ -901,19 +901,19 @@ function userDoc() {
   if (!currentUser) return null;
   return db.collection('users').doc(currentUser.uid);
 }
-
+ 
 function setSyncDot(color) {
   const dot = document.getElementById('syncDot');
   dot.className = 'sync-dot ' + color;
 }
-
+ 
 function showSyncBar(msg) {
   const bar = document.getElementById('syncBar');
   bar.textContent = msg;
   bar.classList.add('show');
   setTimeout(() => bar.classList.remove('show'), 2500);
 }
-
+ 
 // ── Real-time Listeners ───────────────────
 function startFirebaseListeners() {
   // Sales listener
@@ -925,7 +925,7 @@ function startFirebaseListeners() {
       if (document.getElementById('page-home').classList.contains('active')) renderHome();
       if (document.getElementById('page-report').classList.contains('active')) renderReport();
     }, err => { setSyncDot('red'); console.warn('Sales listener:', err); });
-
+ 
   // Stock overrides listener
   if (unsubStock) unsubStock();
   unsubStock = userCol('stock').onSnapshot(snap => {
@@ -936,7 +936,7 @@ function startFirebaseListeners() {
     });
     if (document.getElementById('page-stock').classList.contains('active')) renderStock();
   }, err => console.warn('Stock listener:', err));
-
+ 
   // Custom products listener
   if (unsubCustom) unsubCustom();
   unsubCustom = userCol('customProducts').onSnapshot(snap => {
@@ -948,7 +948,7 @@ function startFirebaseListeners() {
     if (document.getElementById('page-stock').classList.contains('active')) renderStock();
   }, err => console.warn('Custom products listener:', err));
 }
-
+ 
 // ── Local fallback ────────────────────────
 function loadLocalState() {
   try {
@@ -971,7 +971,7 @@ function loadLocalState() {
   } catch(e) { state.products = MASTER_PRODUCTS.map(mp => ({...mp})); }
   renderHome();
 }
-
+ 
 function saveLocalFallback() {
   if (fbEnabled) return; // Firebase is source of truth
   const customProds = state.products.filter(p => p.isCustom);
@@ -981,7 +981,7 @@ function saveLocalFallback() {
     customProducts: customProds
   }));
 }
-
+ 
 // ── DB Write helpers ──────────────────────
 async function dbSaveSale(sale) {
   if (fbEnabled && db) {
@@ -995,7 +995,7 @@ async function dbSaveSale(sale) {
     saveLocalFallback();
   }
 }
-
+ 
 async function dbDeleteSale(id) {
   if (fbEnabled && db) {
     setSyncDot('yellow');
@@ -1006,7 +1006,7 @@ async function dbDeleteSale(id) {
     saveLocalFallback();
   }
 }
-
+ 
 async function dbSaveStock(prod) {
   if (fbEnabled && db) {
     setSyncDot('yellow');
@@ -1018,7 +1018,7 @@ async function dbSaveStock(prod) {
     saveLocalFallback();
   }
 }
-
+ 
 async function dbSaveCustomProduct(prod) {
   if (fbEnabled && db) {
     setSyncDot('yellow');
@@ -1030,12 +1030,12 @@ async function dbSaveCustomProduct(prod) {
     saveLocalFallback();
   }
 }
-
+ 
 function getProduct(id) { return state.products.find(p => p.id === id); }
 // legacy shim
 function saveState() { saveLocalFallback(); }
 function loadState() { loadLocalState(); }
-
+ 
 // ══════════════════════════════════════════
 //  NAVIGATION
 // ══════════════════════════════════════════
@@ -1051,7 +1051,7 @@ function navigate(page, btn) {
   if (page === 'report') renderReport();
   if (page === 'sell') resetSellForm();
 }
-
+ 
 // ══════════════════════════════════════════
 //  DATE HELPERS
 // ══════════════════════════════════════════
@@ -1079,7 +1079,7 @@ function fmtTime(s) {
 function fmtRs(n) {
   return '₹' + Number(n).toLocaleString('en-IN');
 }
-
+ 
 // ══════════════════════════════════════════
 //  HOME
 // ══════════════════════════════════════════
@@ -1088,7 +1088,7 @@ function renderHome() {
   const ms = thisMonthStart();
   const todaySales = state.sales.filter(s => s.date === td);
   const monthSales = state.sales.filter(s => s.date >= ms);
-
+ 
   const tRev = todaySales.reduce((a,s) => a + s.total, 0);
   const tPro = todaySales.reduce((a,s) => a + s.profit, 0);
   const tCnt = todaySales.reduce((a,s) => a + s.qty, 0);
@@ -1098,7 +1098,7 @@ function renderHome() {
   const cash = todaySales.filter(s=>s.pay==='cash').reduce((a,s)=>a+s.total,0);
   const upi  = todaySales.filter(s=>s.pay==='upi').reduce((a,s)=>a+s.total,0);
   const cred = todaySales.filter(s=>s.pay==='credit').reduce((a,s)=>a+s.total,0);
-
+ 
   document.getElementById('todaySales').textContent = fmtRs(tRev);
   document.getElementById('todayProfit').textContent = fmtRs(tPro);
   document.getElementById('todayCount').textContent = tCnt + ' items sold';
@@ -1109,7 +1109,7 @@ function renderHome() {
   document.getElementById('payCash').textContent = fmtRs(cash);
   document.getElementById('payUpi').textContent = fmtRs(upi);
   document.getElementById('payCredit').textContent = fmtRs(cred);
-
+ 
   // Recent sales
   const recent = [...state.sales].reverse().slice(0, 15);
   const el = document.getElementById('recentSales');
@@ -1132,11 +1132,11 @@ function renderHome() {
     </div>
   `).join('');
 }
-
+ 
 function payIco(p) {
   return p === 'cash' ? '💵' : p === 'upi' ? '📱' : '📒';
 }
-
+ 
 // ══════════════════════════════════════════
 //  SELL
 // ══════════════════════════════════════════
@@ -1153,8 +1153,9 @@ function resetSellForm() {
   document.getElementById('profitAmt').textContent = '₹0';
   document.querySelectorAll('.pay-btn').forEach((b,i) => b.classList.toggle('active', i===0));
 }
-
+ 
 document.getElementById('sellSearch').addEventListener('input', function() {
+  if (!state.products || state.products.length === 0) state.products = MASTER_PRODUCTS.map(mp => ({...mp}));
   const q = this.value.trim().toLowerCase();
   const drop = document.getElementById('sellDropdown');
   if (!q) { drop.style.display = 'none'; return; }
@@ -1174,16 +1175,16 @@ document.getElementById('sellSearch').addEventListener('input', function() {
   `).join('');
   drop.style.display = 'block';
 });
-
+ 
 document.getElementById('sellSearch').addEventListener('blur', function() {
   setTimeout(() => document.getElementById('sellDropdown').style.display = 'none', 200);
 });
-
+ 
 function selectProduct(id) {
   selectedProduct = getProduct(id);
   document.getElementById('sellDropdown').style.display = 'none';
   document.getElementById('sellSearch').value = '';
-
+ 
   const box = document.getElementById('selectedProductBox');
   box.innerHTML = `
     <div class="selected-product">
@@ -1193,30 +1194,30 @@ function selectProduct(id) {
     </div>
   `;
   box.style.display = 'block';
-
+ 
   document.getElementById('sellPrice').value = selectedProduct.sell || '';
   document.getElementById('costPrice').value = selectedProduct.cost || '';
   document.getElementById('sellForm').style.display = 'block';
   calcProfit();
 }
-
+ 
 function clearProduct() {
   selectedProduct = null;
   document.getElementById('selectedProductBox').style.display = 'none';
   document.getElementById('sellForm').style.display = 'none';
   document.getElementById('sellSearch').value = '';
 }
-
+ 
 function changeQty(d) {
   const inp = document.getElementById('sellQty');
   const v = Math.max(1, (parseInt(inp.value)||1) + d);
   inp.value = v;
   calcProfit();
 }
-
+ 
 document.getElementById('sellQty').addEventListener('input', calcProfit);
 document.getElementById('sellPrice').addEventListener('input', calcProfit);
-
+ 
 function calcProfit() {
   const qty = parseFloat(document.getElementById('sellQty').value) || 1;
   const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
@@ -1229,24 +1230,24 @@ function calcProfit() {
   prev.style.background = profit >= 0 ? 'var(--green-light)' : 'var(--red-light)';
   document.getElementById('profitAmt').style.color = profit >= 0 ? 'var(--green)' : 'var(--red)';
 }
-
+ 
 function setPayMode(btn, mode) {
   payMode = mode;
   document.querySelectorAll('.pay-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
-
+ 
 function recordSale() {
   if (!selectedProduct) return;
   const qty = parseFloat(document.getElementById('sellQty').value) || 1;
   const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
   const cost = parseFloat(document.getElementById('costPrice').value) || 0;
   if (sell <= 0) { showToast('Enter sell price!'); return; }
-
+ 
   const profit = (sell - cost) * qty;
   const total = sell * qty;
   const now = new Date();
-
+ 
   // Save customized sell price back to product
   const prod = state.products.find(p => p.id === selectedProduct.id);
   if (prod) {
@@ -1255,7 +1256,7 @@ function recordSale() {
     prod.stock = Math.max(0, prod.stock - qty);
     dbSaveStock(prod);
   }
-
+ 
   const saleObj = {
     id: Date.now(),
     ts: now.toISOString(),
@@ -1272,29 +1273,33 @@ function recordSale() {
   showToast('✅ Sale recorded! Profit: ' + fmtRs(profit));
   resetSellForm();
 }
-
+ 
 // ══════════════════════════════════════════
 //  STOCK
 // ══════════════════════════════════════════
 function renderStock() {
+  // Guard: ensure products always loaded from master if empty
+  if (!state.products || state.products.length === 0) {
+    state.products = MASTER_PRODUCTS.map(mp => ({...mp}));
+  }
   // Build category filter
   const cats = ['ALL', ...new Set(state.products.map(p => p.cat))];
   const cf = document.getElementById('catFilter');
   cf.innerHTML = cats.map(c => `
     <div class="cat-chip ${c === stockFilterCat ? 'active' : ''}" onclick="filterCat('${c}')">${c === 'ALL' ? 'All' : c.replace(' ', '<br>')}</div>
   `).join('');
-
+ 
   const q = document.getElementById('stockSearch').value.trim().toLowerCase();
   let prods = state.products;
   if (stockFilterCat !== 'ALL') prods = prods.filter(p => p.cat === stockFilterCat);
   if (q) prods = prods.filter(p => p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q));
-
+ 
   const list = document.getElementById('stockList');
   if (!prods.length) {
     list.innerHTML = '<div class="empty-state"><div class="big-ico">📦</div><p>No products found</p></div>';
     return;
   }
-
+ 
   list.innerHTML = prods.map(p => `
     <div class="stock-item ${p.stock > 5 ? 'ok' : p.stock > 0 ? '' : 'low'}">
       <div class="si-info">
@@ -1310,12 +1315,12 @@ function renderStock() {
     </div>
   `).join('');
 }
-
+ 
 function filterCat(cat) {
   stockFilterCat = cat;
   renderStock();
 }
-
+ 
 let modalProductObj = null;
 function openAddStock(id) {
   if (id === null) {
@@ -1335,11 +1340,11 @@ function openAddStock(id) {
   modalProductId = id;
   document.getElementById('addStockModal').classList.add('open');
 }
-
+ 
 function closeModal(id) {
   document.getElementById(id).classList.remove('open');
 }
-
+ 
 function saveStock() {
   if (!modalProductId) { closeModal('addStockModal'); return; }
   const prod = state.products.find(p => p.id === modalProductId);
@@ -1355,7 +1360,7 @@ function saveStock() {
   renderStock();
   showToast('✅ Stock updated! New stock: ' + prod.stock + ' ' + prod.unit);
 }
-
+ 
 // ══════════════════════════════════════════
 //  REPORTS
 // ══════════════════════════════════════════
@@ -1366,7 +1371,7 @@ function setPeriod(btn, period) {
   document.getElementById('customDateRange').style.display = period === 'custom' ? 'block' : 'none';
   renderReport();
 }
-
+ 
 function getFilteredSales() {
   const td = today();
   let from, to = td;
@@ -1379,7 +1384,7 @@ function getFilteredSales() {
   }
   return state.sales.filter(s => s.date >= from && s.date <= to);
 }
-
+ 
 function renderReport() {
   const sales = getFilteredSales();
   const rev = sales.reduce((a,s) => a+s.total, 0);
@@ -1388,13 +1393,13 @@ function renderReport() {
   const cash = sales.filter(s=>s.pay==='cash').reduce((a,s)=>a+s.total,0);
   const upi  = sales.filter(s=>s.pay==='upi').reduce((a,s)=>a+s.total,0);
   const cred = sales.filter(s=>s.pay==='credit').reduce((a,s)=>a+s.total,0);
-
+ 
   document.getElementById('reportSummary').innerHTML = `
     <div class="rs-box"><div class="rs-val o">${fmtRs(rev)}</div><div class="rs-lbl">Revenue</div></div>
     <div class="rs-box"><div class="rs-val g">${fmtRs(pro)}</div><div class="rs-lbl">Profit</div></div>
     <div class="rs-box"><div class="rs-val b">${cnt}</div><div class="rs-lbl">Sales</div></div>
   `;
-
+ 
   document.getElementById('reportPayBreak').innerHTML = `
     <div class="card" style="padding:12px;">
       <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
@@ -1404,7 +1409,7 @@ function renderReport() {
       </div>
     </div>
   `;
-
+ 
   const list = document.getElementById('reportList');
   if (!sales.length) {
     list.innerHTML = '<div class="empty-state"><div class="big-ico">📊</div><p>No sales in this period</p></div>';
@@ -1430,7 +1435,7 @@ function renderReport() {
     </div>
   `).join('');
 }
-
+ 
 function deleteSale(id) {
   if (!confirm('Delete this sale? Stock will be restored to inventory.')) return;
   // Restore stock
@@ -1446,11 +1451,11 @@ function deleteSale(id) {
   if (!fbEnabled) { renderReport(); renderHome(); renderStock(); }
   showToast('🗑️ Sale deleted — stock restored!');
 }
-
+ 
 // ── Bill Select Mode ──────────────────────
 let billSelectMode = false;
 let selectedSaleIds = new Set();
-
+ 
 function toggleBillSelect() {
   billSelectMode = !billSelectMode;
   selectedSaleIds.clear();
@@ -1461,7 +1466,7 @@ function toggleBillSelect() {
   });
   updateBillSelect();
 }
-
+ 
 function updateBillSelect() {
   selectedSaleIds.clear();
   document.querySelectorAll('.bill-checkbox:checked').forEach(c => {
@@ -1469,19 +1474,19 @@ function updateBillSelect() {
   });
   document.getElementById('billSelectCount').textContent = selectedSaleIds.size + ' selected';
 }
-
+ 
 function selectAllSales() {
   document.querySelectorAll('.bill-checkbox').forEach(c => { c.checked = true; });
   updateBillSelect();
 }
-
+ 
 // ── PDF Bill Generator ─────────────────
 function buildBillPDF(sales, billNo, customerName, customerPhone) {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: 'mm', format: 'a5', orientation: 'portrait' });
   const W = 148, margin = 12;
   let y = 14;
-
+ 
   // Header
   doc.setFillColor(0, 96, 100);
   doc.rect(0, 0, W, 28, 'F');
@@ -1492,7 +1497,7 @@ function buildBillPDF(sales, billNo, customerName, customerPhone) {
   doc.text('Plastic Items & Home Essentials', W/2, 17, {align:'center'});
   doc.text('Ph: +91 74406 67461', W/2, 22, {align:'center'});
   y = 34;
-
+ 
   // Bill info
   doc.setTextColor(0,96,100);
   doc.setFontSize(9); doc.setFont('helvetica','bold');
@@ -1515,13 +1520,13 @@ function buildBillPDF(sales, billNo, customerName, customerPhone) {
     y += 5;
   }
   y += 1;
-
+ 
   // Divider
   doc.setDrawColor(0,188,212);
   doc.setLineWidth(0.5);
   doc.line(margin, y, W - margin, y);
   y += 5;
-
+ 
   // Table header
   doc.setFillColor(0, 188, 212);
   doc.rect(margin, y-4, W - margin*2, 8, 'F');
@@ -1532,7 +1537,7 @@ function buildBillPDF(sales, billNo, customerName, customerPhone) {
   doc.text('Rate', 112, y+1, {align:'center'});
   doc.text('Amount', W-margin-2, y+1, {align:'right'});
   y += 8;
-
+ 
   // Group sales by product
   const grouped = {};
   sales.forEach(s => {
@@ -1541,7 +1546,7 @@ function buildBillPDF(sales, billNo, customerName, customerPhone) {
     grouped[key].qty += s.qty;
     grouped[key].total += s.total;
   });
-
+ 
   // Table rows
   doc.setTextColor(30,30,30);
   doc.setFont('helvetica','normal');
@@ -1563,7 +1568,7 @@ function buildBillPDF(sales, billNo, customerName, customerPhone) {
     rowIdx++;
     if (y > 175) { doc.addPage(); y = 14; }
   });
-
+ 
   // Total line
   y += 2;
   doc.setDrawColor(0,188,212);
@@ -1576,14 +1581,14 @@ function buildBillPDF(sales, billNo, customerName, customerPhone) {
   doc.text('TOTAL', margin+4, y+2);
   doc.text('Rs.' + grandTotal.toLocaleString('en-IN'), W-margin-2, y+2, {align:'right'});
   y += 14;
-
+ 
   // Payment mode
   const payModes = [...new Set(sales.map(s=>s.pay))];
   doc.setTextColor(0,96,100);
   doc.setFontSize(8); doc.setFont('helvetica','normal');
   doc.text('Payment: ' + payModes.map(p=>p.toUpperCase()).join(', '), margin, y);
   y += 10;
-
+ 
   // Footer
   doc.setDrawColor(200,200,200);
   doc.line(margin, y, W-margin, y);
@@ -1593,10 +1598,10 @@ function buildBillPDF(sales, billNo, customerName, customerPhone) {
   doc.text('Thank you for shopping with us!', W/2, y, {align:'center'});
   doc.setFontSize(7);
   doc.text('Rishabh Traders — Your Trusted Plastic & Home Store', W/2, y+4, {align:'center'});
-
+ 
   return doc;
 }
-
+ 
 async function sharePDF(doc, filename, saleIds, customerPhone) {
   const markBillSent = () => {
     saleIds.forEach(id => {
@@ -1609,11 +1614,11 @@ async function sharePDF(doc, filename, saleIds, customerPhone) {
     if (!fbEnabled) saveLocalFallback();
     renderReport();
   };
-
+ 
   // Step 1: Always try native share first (Android share sheet = best experience)
   const pdfBlob = doc.output('blob');
   const file = new File([pdfBlob], filename, {type:'application/pdf'});
-
+ 
   if (navigator.canShare && navigator.canShare({files:[file]})) {
     try {
       await navigator.share({ files:[file], title:'Bill from Rishabh Traders', text:'Your bill from Rishabh Traders' });
@@ -1624,23 +1629,23 @@ async function sharePDF(doc, filename, saleIds, customerPhone) {
       if (e.name === 'AbortError') return; // user cancelled
     }
   }
-
+ 
   // Step 2: Download PDF + show WhatsApp action sheet
   fallbackPDFDownload(doc, filename);
   markBillSent();
   showBillActionSheet(filename, customerPhone);
 }
-
+ 
 function showBillActionSheet(filename, customerPhone) {
   // Remove any existing action sheet
   const existing = document.getElementById('billActionSheet');
   if (existing) existing.remove();
-
+ 
   const phone = customerPhone ? customerPhone.replace(/\D/g,'') : '';
   const waUrl = phone
     ? 'https://wa.me/91' + phone + '?text=' + encodeURIComponent('Dear Customer, your bill from Rishabh Traders has been downloaded. Bill No: ' + filename.replace('Bill_','').replace('.pdf',''))
     : 'https://wa.me/?text=' + encodeURIComponent('Bill from Rishabh Traders — ' + filename);
-
+ 
   const sheet = document.createElement('div');
   sheet.id = 'billActionSheet';
   sheet.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);display:flex;flex-direction:column;justify-content:flex-end;';
@@ -1662,7 +1667,7 @@ function showBillActionSheet(filename, customerPhone) {
   sheet.addEventListener('click', e => { if (e.target === sheet) sheet.remove(); });
   document.body.appendChild(sheet);
 }
-
+ 
 function fallbackPDFDownload(doc, filename) {
   try {
     // Method 1: blob URL (most reliable)
@@ -1694,10 +1699,10 @@ function fallbackPDFDownload(doc, filename) {
     }
   }
 }
-
+ 
 // ── Customer Name Modal ───────────────────
 let pendingBillSaleIds = [];
-
+ 
 function openCustomerNameModal(saleIds) {
   pendingBillSaleIds = saleIds;
   document.getElementById('customerNameInput').value = '';
@@ -1710,7 +1715,7 @@ function openCustomerNameModal(saleIds) {
     : `${saleIds.length} items — Total: Rs.${total.toLocaleString('en-IN')}`;
   document.getElementById('customerNameModal').classList.add('open');
 }
-
+ 
 function proceedGenerateBill() {
   closeModal('customerNameModal');
   const customerName = document.getElementById('customerNameInput').value.trim();
@@ -1720,7 +1725,7 @@ function proceedGenerateBill() {
   const doc = buildBillPDF(sales, billNo, customerName, customerPhone);
   sharePDF(doc, 'Bill_' + billNo + '.pdf', pendingBillSaleIds, customerPhone);
 }
-
+ 
 function proceedGenerateBillDownload() {
   closeModal('customerNameModal');
   const customerName = document.getElementById('customerNameInput').value.trim();
@@ -1730,11 +1735,11 @@ function proceedGenerateBillDownload() {
   const doc = buildBillPDF(sales, billNo, customerName, customerPhone);
   fallbackPDFDownload(doc, 'Bill_' + billNo + '.pdf');
 }
-
+ 
 function generateSingleBill(saleId) {
   openCustomerNameModal([saleId]);
 }
-
+ 
 // ── Share CSV on WhatsApp ─────────────────
 async function shareCSVWhatsApp() {
   const sales = getFilteredSales();
@@ -1756,17 +1761,17 @@ async function shareCSVWhatsApp() {
     showToast('📥 Downloaded (sharing not supported on this browser)');
   }
 }
-
+ 
 function generateMultiBill() {
   if (selectedSaleIds.size === 0) { showToast('Select at least 1 sale!'); return; }
   openCustomerNameModal([...selectedSaleIds]);
   toggleBillSelect();
 }
-
+ 
 // ── Edit Sale ─────────────────────────────
 let editSaleId = null;
 let editPayMode = 'cash';
-
+ 
 function openEditSale(id) {
   const sale = state.sales.find(s => s.id === id);
   if (!sale) return;
@@ -1782,13 +1787,13 @@ function openEditSale(id) {
   updateEditProfit();
   document.getElementById('editSaleModal').classList.add('open');
 }
-
+ 
 function setEditPay(btn, mode) {
   editPayMode = mode;
   document.querySelectorAll('#editPayBtns .pay-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
-
+ 
 function updateEditProfit() {
   const sale = state.sales.find(s => s.id === editSaleId);
   if (!sale) return;
@@ -1798,7 +1803,7 @@ function updateEditProfit() {
   document.getElementById('editProfitAmt').textContent = fmtRs(profit);
   document.getElementById('editProfitAmt').style.color = profit >= 0 ? 'var(--green)' : 'var(--red)';
 }
-
+ 
 async function saveEditSale() {
   const sale = state.sales.find(s => s.id === editSaleId);
   if (!sale) return;
@@ -1818,10 +1823,10 @@ async function saveEditSale() {
   renderReport(); renderHome();
   showToast('✅ Sale updated!');
 }
-
+ 
 // ── Bill Generator ────────────────────────
 let currentBillText = '';
-
+ 
 function openBillModal() {
   const sales = getFilteredSales();
   if (!sales.length) { showToast('No sales in this period!'); return; }
@@ -1832,7 +1837,7 @@ function openBillModal() {
   const cred = sales.filter(s=>s.pay==='credit').reduce((a,s)=>a+s.total,0);
   const d = new Date();
   const periodLabels = {today:'Today', week:'This Week', month:'This Month', custom:'Custom Period'};
-
+ 
   let bill = '';
   bill += '🛍️ *RISHABH TRADERS*\n';
   bill += 'Plastic Items & Home Essentials\n';
@@ -1863,23 +1868,23 @@ function openBillModal() {
   if (Object.keys(grouped).length > 15) bill += `  ...and ${Object.keys(grouped).length - 15} more items\n`;
   bill += '━━━━━━━━━━━━━━━━━━━━\n';
   bill += '_Powered by Rishabh Traders App_';
-
+ 
   currentBillText = bill;
   document.getElementById('billPreview').textContent = bill.replace(/\*/g,'').replace(/_/g,'');
   document.getElementById('billModal').classList.add('open');
 }
-
+ 
 function sendBillWhatsApp() {
   const encoded = encodeURIComponent(currentBillText);
   window.open('https://wa.me/?text=' + encoded, '_blank');
 }
-
+ 
 function copyBill() {
   navigator.clipboard.writeText(currentBillText.replace(/\*/g,'').replace(/_/g,''))
     .then(() => showToast('✅ Bill copied!'))
     .catch(() => showToast('Long press the bill text to copy'));
 }
-
+ 
 function exportCSV() {
   const sales = getFilteredSales();
   if (!sales.length) { showToast('No data to export!'); return; }
@@ -1910,7 +1915,7 @@ function exportCSV() {
     showToast('📥 CSV downloading...');
   }
 }
-
+ 
 // ══════════════════════════════════════════
 //  TOAST
 // ══════════════════════════════════════════
@@ -1922,7 +1927,7 @@ function showToast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
 }
-
+ 
 // ══════════════════════════════════════════
 //  NEW PRODUCT
 // ══════════════════════════════════════════
@@ -1941,13 +1946,13 @@ function openNewProduct() {
   document.getElementById('npMarginPreview').style.display = 'none';
   document.getElementById('newProductModal').classList.add('open');
 }
-
+ 
 function handleCatSelect(sel) {
   const newInput = document.getElementById('npCatNew');
   newInput.style.display = sel.value === '__new__' ? 'block' : 'none';
   if (sel.value === '__new__') newInput.focus();
 }
-
+ 
 function autoFillSell() {
   const cost = parseFloat(document.getElementById('npCost').value) || 0;
   const sellEl = document.getElementById('npSell');
@@ -1965,25 +1970,25 @@ function autoFillSell() {
     prev.style.background = margin >= 0 ? 'var(--green-light)' : 'var(--red-light)';
   }
 }
-
+ 
 function saveNewProduct() {
   const name = document.getElementById('npName').value.trim();
   if (!name) { showToast('⚠️ Product name required!'); return; }
-
+ 
   const catSel = document.getElementById('npCatSelect').value;
   let cat = catSel === '__new__'
     ? document.getElementById('npCatNew').value.trim().toUpperCase()
     : catSel;
   if (!cat) { showToast('⚠️ Select or enter a category!'); return; }
-
+ 
   const cost = parseFloat(document.getElementById('npCost').value) || 0;
   const sell = parseFloat(document.getElementById('npSell').value) || 0;
   if (cost <= 0 || sell <= 0) { showToast('⚠️ Enter cost & sell price!'); return; }
-
+ 
   const code = document.getElementById('npCode').value.trim();
   const stock = parseInt(document.getElementById('npStock').value) || 0;
   const unit = document.getElementById('npUnit').value;
-
+ 
   // Generate ID — higher than all existing
   const maxId = Math.max(...state.products.map(p => p.id), 399);
   const newProd = {
@@ -1991,26 +1996,26 @@ function saveNewProduct() {
     cat, name, code, cost, sell, stock, unit,
     isCustom: true
   };
-
+ 
   state.products.push(newProd);
   dbSaveCustomProduct(newProd);
   closeModal('newProductModal');
   renderStock();
   showToast('✅ "' + name + '" added!');
 }
-
+ 
 // ══════════════════════════════════════════
 //  LOGIN / ROLE SYSTEM
 // ══════════════════════════════════════════
 let OWNER_PIN = localStorage.getItem('ownerPin') || '3578';
 let currentRole = null;
 let pinBuffer = '';
-
+ 
 function showLoginScreen() {
   document.getElementById('loginScreen').classList.add('show');
   document.getElementById('ownerBadge').classList.remove('show');
 }
-
+ 
 function selectRole(role) {
   if (role === 'staff') {
     loginAsStaff();
@@ -2020,7 +2025,7 @@ function selectRole(role) {
     updatePinDots();
   }
 }
-
+ 
 function pinPress(key) {
   if (key === 'back') {
     pinBuffer = pinBuffer.slice(0, -1);
@@ -2036,13 +2041,13 @@ function pinPress(key) {
     setTimeout(() => checkPin(), 150);
   }
 }
-
+ 
 function updatePinDots() {
   for (let i = 0; i < 4; i++) {
     document.getElementById('pd' + i).classList.toggle('filled', i < pinBuffer.length);
   }
 }
-
+ 
 function checkPin() {
   if (pinBuffer === OWNER_PIN) {
     loginAsOwner();
@@ -2053,24 +2058,28 @@ function checkPin() {
     setTimeout(() => document.getElementById('pinError').classList.remove('show'), 2000);
   }
 }
-
+ 
 function loginAsOwner() {
   currentRole = 'owner';
   sessionStorage.setItem('role', 'owner');
   document.getElementById('loginScreen').classList.remove('show');
   document.getElementById('ownerBadge').classList.add('show');
+  // Ensure products loaded
+  if (!state.products || state.products.length === 0) loadLocalState();
   // Show all 4 nav buttons
   document.querySelectorAll('.nav-btn').forEach(b => b.style.display = '');
   // Navigate to Home
   const homeBtn = document.querySelector('.nav-btn');
   navigate('home', homeBtn);
 }
-
+ 
 function loginAsStaff() {
   currentRole = 'staff';
   sessionStorage.setItem('role', 'staff');
   document.getElementById('loginScreen').classList.remove('show');
   document.getElementById('ownerBadge').classList.remove('show');
+  // Ensure products loaded
+  if (!state.products || state.products.length === 0) loadLocalState();
   // Hide Home and Report nav buttons (index 0 and 3)
   const navBtns = document.querySelectorAll('.nav-btn');
   navBtns[0].style.display = 'none'; // Home
@@ -2078,7 +2087,7 @@ function loginAsStaff() {
   // Navigate to Sell
   navigate('sell', navBtns[1]);
 }
-
+ 
 function openChangePinModal() {
   document.getElementById('currentPinInput').value = '';
   document.getElementById('newPinInput').value = '';
@@ -2086,15 +2095,15 @@ function openChangePinModal() {
   document.getElementById('changePinError').style.display = 'none';
   document.getElementById('changePinModal').classList.add('open');
 }
-
+ 
 function saveNewPin() {
   const current = document.getElementById('currentPinInput').value.trim();
   const newPin  = document.getElementById('newPinInput').value.trim();
   const confirm = document.getElementById('confirmPinInput').value.trim();
   const errEl   = document.getElementById('changePinError');
-
+ 
   errEl.style.display = 'none';
-
+ 
   if (current !== OWNER_PIN) {
     errEl.textContent = '❌ Current PIN is wrong!';
     errEl.style.display = 'block';
@@ -2110,13 +2119,13 @@ function saveNewPin() {
     errEl.style.display = 'block';
     return;
   }
-
+ 
   OWNER_PIN = newPin;
   localStorage.setItem('ownerPin', newPin);
   closeModal('changePinModal');
   showToast('✅ PIN updated successfully!');
 }
-
+ 
 function logoutOwner() {
   sessionStorage.removeItem('role');
   currentRole = null;
@@ -2124,13 +2133,13 @@ function logoutOwner() {
   document.getElementById('pinSection').classList.remove('show');
   showLoginScreen();
 }
-
+ 
 function initRole() {
   // Auth handled by Firebase onAuthStateChanged — show auth screen by default
   // If no firebase yet, show login screen
   if (!fbEnabled) showLoginScreen();
 }
-
+ 
 // ══════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════
@@ -2153,7 +2162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   cf.innerHTML = cats.map(c => `
     <div class="cat-chip ${c === 'ALL' ? 'active' : ''}" onclick="filterCat('${c}')">${c === 'ALL' ? 'All' : c}</div>
   `).join('');
-
+ 
   // ── PWA: Inject Manifest ──────────────────────────
   const manifestData = {
     name: 'Rishabh Traders — Shop Manager',
@@ -2172,7 +2181,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const manifestBlob = new Blob([JSON.stringify(manifestData)], {type:'application/json'});
   const manifestURL = URL.createObjectURL(manifestBlob);
   document.getElementById('pwa-manifest').setAttribute('href', manifestURL);
-
+ 
   // ── PWA: Register Service Worker ─────────────────
   const swHostOk = location.protocol !== 'file:' && !location.hostname.includes('claude') && !location.hostname.includes('localhost');
   if ('serviceWorker' in navigator && swHostOk) {
@@ -2190,7 +2199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.warn('SW registration failed:', err));
   }
-
+ 
   // ── PWA: Install Prompt ───────────────────────────
   let deferredPrompt = null;
   window.addEventListener('beforeinstallprompt', e => {
@@ -2222,7 +2231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('installBanner').classList.remove('show');
     localStorage.setItem('installDismissed', '1');
   };
-
+ 
   // ── Online / Offline Detection ────────────────────
   const badge = document.getElementById('offlineBadge');
   function updateOnlineStatus() {
