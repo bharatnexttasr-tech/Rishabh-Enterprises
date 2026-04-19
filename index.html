@@ -15,7 +15,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <style>
 :root {
@@ -183,30 +182,6 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .qty-row { display:flex; align-items:center; gap:8px; }
 .qty-btn { width:38px; height:38px; border-radius:8px; background:var(--cyan-pale); border:2px solid var(--cyan); color:var(--cyan); font-size:1.2rem; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 .qty-inp { flex:1; }
-.auth-screen { display:none; position:fixed; inset:0; background:linear-gradient(160deg,#006064 0%,#00BCD4 100%); z-index:8500; flex-direction:column; justify-content:center; align-items:center; padding:20px; overflow-y:auto; }
-.auth-screen.show { display:flex; }
-.auth-card { background:#fff; border-radius:24px; padding:26px 20px; width:100%; max-width:380px; box-shadow:0 24px 60px rgba(0,0,0,0.25); }
-.auth-logo { font-size:2.5rem; text-align:center; margin-bottom:4px; }
-.auth-title { font-family:"Baloo 2",cursive; font-size:1.4rem; font-weight:800; text-align:center; color:#006064; margin-bottom:2px; }
-.auth-sub { font-size:0.78rem; color:#888; text-align:center; margin-bottom:20px; }
-.auth-tab-row { display:flex; background:#f0f0f0; border-radius:10px; padding:3px; margin-bottom:18px; }
-.auth-tab { flex:1; padding:8px; text-align:center; border-radius:8px; font-size:0.82rem; font-weight:600; cursor:pointer; color:#888; transition:all 0.15s; }
-.auth-tab.active { background:#fff; color:#006064; box-shadow:0 1px 4px rgba(0,0,0,0.12); }
-.auth-step { display:none; }
-.auth-step.show { display:block; }
-.otp-inputs { display:flex; gap:10px; justify-content:center; margin:12px 0; }
-.otp-inp { width:46px; height:52px; border:2px solid var(--border); border-radius:10px; text-align:center; font-size:1.4rem; font-weight:700; font-family:"Baloo 2",cursive; color:#006064; outline:none; }
-.otp-inp:focus { border-color:#00BCD4; }
-.auth-btn { width:100%; padding:14px; background:#006064; color:#fff; border:none; border-radius:12px; font-size:1rem; font-weight:700; font-family:"Baloo 2",cursive; cursor:pointer; margin-top:8px; }
-.auth-btn.wa { background:#25D366; }
-.auth-back { background:none; border:none; color:#00BCD4; font-size:0.82rem; cursor:pointer; margin-top:8px; width:100%; text-align:center; }
-.auth-err { color:var(--red); font-size:0.78rem; margin-top:6px; display:none; text-align:center; }
-.auth-err.show { display:block; }
-.recaptcha-container { display:flex; justify-content:center; margin:10px 0; }
-.user-avatar { width:36px; height:36px; border-radius:50%; background:#006064; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:700; font-family:"Baloo 2",cursive; cursor:pointer; }
-.auth-phone-prefix { display:flex; align-items:center; gap:6px; }
-.auth-phone-prefix span { font-weight:700; color:#006064; font-size:0.95rem; padding:13px 10px; background:#f0fdff; border:2px solid var(--border); border-radius:10px 0 0 10px; border-right:none; }
-.auth-phone-prefix input { border-radius:0 10px 10px 0 !important; }
 .login-screen { display:none; position:fixed; inset:0; background:linear-gradient(160deg,#006064 0%,#00BCD4 100%); z-index:8000; flex-direction:column; justify-content:center; align-items:center; padding:24px; }
 .login-screen.show { display:flex; }
 .login-card { background:#fff; border-radius:24px; padding:28px 22px; width:100%; max-width:360px; box-shadow:0 24px 60px rgba(0,0,0,0.3); text-align:center; }
@@ -267,80 +242,6 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 <body>
 <div class="app">
  
-<!-- AUTH SCREEN (Sign Up / Login) -->
-<div class="auth-screen" id="authScreen">
-  <div class="auth-card">
-    <div class="auth-logo">🛍️</div>
-    <div class="auth-title">Rishabh Traders</div>
-    <div class="auth-sub">Shop Management App</div>
- 
-    <div class="auth-tab-row">
-      <div class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Login</div>
-      <div class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')">Sign Up</div>
-    </div>
- 
-    <!-- Step: Phone Entry -->
-    <div class="auth-step show" id="stepPhone">
-      <label class="form-label">Mobile Number</label>
-      <div class="auth-phone-prefix">
-        <span>+91</span>
-        <input class="form-input" id="authPhone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" />
-      </div>
-      <div id="signupExtra" style="display:none;margin-top:12px;">
-        <label class="form-label">Your Name</label>
-        <input class="form-input" id="authName" placeholder="e.g. Ramesh Kumar" style="margin-bottom:10px;" />
-        <label class="form-label">Invite Code</label>
-        <input class="form-input" id="authInviteCode" placeholder="Enter invite code from owner" style="text-transform:uppercase;" />
-      </div>
-      <div id="recaptcha-container" class="recaptcha-container"></div>
-      <div class="auth-err" id="phoneErr"></div>
-      <button class="auth-btn" onclick="sendOTP()">Send OTP</button>
-    </div>
- 
-    <!-- Step: OTP Entry -->
-    <div class="auth-step" id="stepOTP">
-      <div style="text-align:center;font-size:0.82rem;color:#666;margin-bottom:12px;">OTP sent to <b id="otpSentTo"></b></div>
-      <label class="form-label" style="text-align:center;display:block;">Enter 6-digit OTP</label>
-      <div class="otp-inputs">
-        <input class="otp-inp" id="o0" maxlength="1" inputmode="numeric" onInput="otpMove(this,0)" />
-        <input class="otp-inp" id="o1" maxlength="1" inputmode="numeric" onInput="otpMove(this,1)" />
-        <input class="otp-inp" id="o2" maxlength="1" inputmode="numeric" onInput="otpMove(this,2)" />
-        <input class="otp-inp" id="o3" maxlength="1" inputmode="numeric" onInput="otpMove(this,3)" />
-        <input class="otp-inp" id="o4" maxlength="1" inputmode="numeric" onInput="otpMove(this,4)" />
-        <input class="otp-inp" id="o5" maxlength="1" inputmode="numeric" onInput="otpMove(this,5)" />
-      </div>
-      <div class="auth-err" id="otpErr"></div>
-      <button class="auth-btn" onclick="verifyOTP()">Verify & Login</button>
-      <button class="auth-back" onclick="backToPhone()">← Change number</button>
-      <button class="auth-back" onclick="resendOTP()" id="resendBtn" style="display:none;">Resend OTP</button>
-    </div>
- 
-    <!-- Step: Shop Setup (new users only) -->
-    <div class="auth-step" id="stepSetup">
-      <div style="text-align:center;font-size:0.9rem;font-weight:700;color:#006064;margin-bottom:12px;">✅ Phone Verified!</div>
-      <label class="form-label">Shop Name</label>
-      <input class="form-input" id="setupShopName" placeholder="e.g. My Plastic Store" style="margin-bottom:10px;" />
-      <label class="form-label">Owner Name</label>
-      <input class="form-input" id="setupOwnerName" placeholder="Your full name" />
-      <div class="auth-err" id="setupErr"></div>
-      <button class="auth-btn" onclick="completeSetup()">🚀 Create My Shop</button>
-    </div>
-  </div>
-</div>
- 
-<!-- OWNER INVITE CODE MODAL -->
-<div class="modal-overlay" id="inviteCodeModal">
-  <div class="modal-sheet">
-    <div class="modal-title">
-      🔑 Invite Codes
-      <button class="modal-close" onclick="closeModal('inviteCodeModal')">✕</button>
-    </div>
-    <div style="font-size:0.8rem;color:#666;margin-bottom:14px;">Share these codes with people you want to give access to your shop.</div>
-    <div id="inviteCodeList" style="margin-bottom:14px;"></div>
-    <button class="btn-submit" onclick="generateInviteCode()">➕ Generate New Code</button>
-  </div>
-</div>
- 
 <!-- LOGIN SCREEN -->
 <div class="login-screen" id="loginScreen">
   <div class="login-card">
@@ -387,26 +288,10 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 </div>
  
 <!-- OWNER BADGE (logout) -->
-<div class="owner-badge" id="ownerBadge" style="display:none;">
-  <span id="userAvatarBadge" onclick="openUserMenu()" style="cursor:pointer;">👤</span>
+<div class="owner-badge" id="ownerBadge">
+  <span onclick="openChangePinModal()" style="cursor:pointer;">👑 Owner</span>
   &nbsp;
-  <span onclick="logoutUser()" style="cursor:pointer;opacity:0.7;">✕</span>
-</div>
- 
-<!-- USER MENU MODAL -->
-<div class="modal-overlay" id="userMenuModal">
-  <div class="modal-sheet">
-    <div class="modal-title">
-      👤 <span id="userMenuName">Account</span>
-      <button class="modal-close" onclick="closeModal('userMenuModal')">✕</button>
-    </div>
-    <div id="userMenuPhone" style="font-size:0.8rem;color:#666;margin-bottom:16px;"></div>
-    <div id="ownerMenuItems" style="display:none;">
-      <button onclick="closeModal('userMenuModal');openChangePinModal();" style="width:100%;padding:13px;background:#E0F7FA;border:2px solid #00BCD4;border-radius:10px;font-size:0.88rem;font-weight:700;color:#006064;cursor:pointer;margin-bottom:10px;">🔐 Change Owner PIN</button>
-      <button onclick="closeModal('userMenuModal');openInviteCodes();" style="width:100%;padding:13px;background:#E0F7FA;border:2px solid #00BCD4;border-radius:10px;font-size:0.88rem;font-weight:700;color:#006064;cursor:pointer;margin-bottom:10px;">🔑 Manage Invite Codes</button>
-    </div>
-    <button onclick="logoutUser();" style="width:100%;padding:13px;background:var(--red-light);border:2px solid var(--red);border-radius:10px;font-size:0.88rem;font-weight:700;color:var(--red);cursor:pointer;">🚪 Sign Out</button>
-  </div>
+  <span onclick="logoutOwner()" style="cursor:pointer;opacity:0.7;">✕</span>
 </div>
  
 <!-- CHANGE PIN MODAL -->
@@ -841,10 +726,7 @@ let state = {
   sales: [],
 };
 let db = null;
-let auth = null;
 let fbEnabled = false;
-let currentUser = null;
-let currentUserProfile = null;
 let selectedProduct = null;
 let payMode = 'cash';
 let currentPeriod = 'today';
@@ -873,33 +755,21 @@ function initFirebase(cfg) {
   try {
     if (!firebase.apps.length) firebase.initializeApp(cfg);
     db = firebase.firestore();
-    auth = firebase.auth();
     db.enablePersistence({synchronizeTabs: true}).catch(() => {});
     fbEnabled = true;
     document.getElementById('fbSetupScreen').classList.remove('show');
-    // Listen to auth state
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        currentUser = user;
-        loadUserProfile(user);
-      } else {
-        currentUser = null;
-        showAuthScreen();
-      }
-    });
+    setSyncDot('yellow');
+    loadLocalState();
+    startFirebaseListeners();
   } catch(e) {
     alert('Firebase error: ' + e.message + '\nCheck your config values.');
   }
 }
  
-// ── User-scoped Firestore path ────────────
+// ── Firestore path (shared shop data) ────
 function userCol(collection) {
-  if (!currentUser) return null;
-  return db.collection('users').doc(currentUser.uid).collection(collection);
-}
-function userDoc() {
-  if (!currentUser) return null;
-  return db.collection('users').doc(currentUser.uid);
+  if (!db) return null;
+  return db.collection(collection);
 }
  
 function setSyncDot(color) {
@@ -984,25 +854,35 @@ function saveLocalFallback() {
  
 // ── DB Write helpers ──────────────────────
 async function dbSaveSale(sale) {
-  if (fbEnabled && db) {
+  // Always push locally first for instant UI update
+  if (!state.sales.find(s => s.id === sale.id)) {
+    state.sales.push(sale);
+  }
+  renderHome();
+  if (fbEnabled && db && userCol('sales')) {
     setSyncDot('yellow');
     try {
       await userCol('sales').doc(String(sale.id)).set(sale);
       setSyncDot('green');
-    } catch(e) { setSyncDot('red'); console.warn('Save sale error:', e); }
+    } catch(e) {
+      setSyncDot('red');
+      console.warn('Save sale error:', e);
+    }
   } else {
-    state.sales.push(sale);
     saveLocalFallback();
   }
 }
  
 async function dbDeleteSale(id) {
-  if (fbEnabled && db) {
+  // Always remove locally first
+  state.sales = state.sales.filter(s => s.id !== id);
+  renderHome();
+  renderReport();
+  if (fbEnabled && db && userCol('sales')) {
     setSyncDot('yellow');
     try { await userCol('sales').doc(String(id)).delete(); setSyncDot('green'); }
     catch(e) { setSyncDot('red'); console.warn('Delete sale error:', e); }
   } else {
-    state.sales = state.sales.filter(s => s.id !== id);
     saveLocalFallback();
   }
 }
@@ -2135,15 +2015,17 @@ function logoutOwner() {
 }
  
 function initRole() {
-  // Auth handled by Firebase onAuthStateChanged — show auth screen by default
-  // If no firebase yet, show login screen
-  if (!fbEnabled) showLoginScreen();
+  const saved = sessionStorage.getItem('role');
+  if (saved === 'owner') { loginAsOwner(); }
+  else if (saved === 'staff') { loginAsStaff(); }
+  else { showLoginScreen(); }
 }
  
 // ══════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
+  initRole();
   // Firebase config — hardcoded (no setup needed)
   const FIREBASE_CONFIG = {
     apiKey: "AIzaSyBxnyrkpJDobPRPavwK8b8ALlFsFntrIKk",
@@ -2249,3 +2131,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
