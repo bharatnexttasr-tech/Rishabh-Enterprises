@@ -1,6 +1,6 @@
 // Rishabh Traders — Service Worker v1
 const CACHE_NAME = 'rishabh-traders-v1';
-
+ 
 // Cache the app shell on install
 self.addEventListener('install', event => {
   self.skipWaiting();
@@ -14,7 +14,7 @@ self.addEventListener('install', event => {
     })
   );
 });
-
+ 
 // Clean up old caches on activate
 self.addEventListener('activate', event => {
   event.waitUntil(
@@ -26,7 +26,7 @@ self.addEventListener('activate', event => {
   );
   self.clients.claim();
 });
-
+ 
 // Serve from cache, fall back to network, cache new responses
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
@@ -42,3 +42,5 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+ 
+
