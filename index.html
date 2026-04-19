@@ -49,7 +49,7 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
  
 /* ── Bottom Nav ── */
 .bottom-nav { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; background:#fff; border-top:2px solid var(--border); display:flex; z-index:200; }
-.nav-btn { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 4px 12px; cursor:pointer; border:none; background:none; color:var(--text2); font-size:0.62rem; font-family:'Noto Sans',sans-serif; font-weight:500; transition:color 0.15s; }
+.nav-btn { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 2px 10px; cursor:pointer; border:none; background:none; color:var(--text2); font-size:0.58rem; font-family:'Noto Sans',sans-serif; font-weight:500; transition:color 0.15s; }
 .nav-btn .ico { font-size:1.4rem; line-height:1; }
 .nav-btn.active { color:var(--cyan); }
 .nav-btn.active .ico { transform:scale(1.1); }
@@ -156,6 +156,21 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
 .sr-sale { font-size:0.75rem; color:var(--text2); margin-top:2px; }
 .sr-del { background:none; border:none; font-size:1rem; cursor:pointer; color:var(--red); margin-left:6px; padding:4px; }
  
+.customer-dropdown { position:absolute; top:calc(100% + 4px); left:0; right:0; background:#fff; border:2px solid #00BCD4; border-radius:10px; max-height:200px; overflow-y:auto; z-index:600; box-shadow:0 8px 24px rgba(0,0,0,0.12); }
+.customer-drop-item { padding:10px 14px; cursor:pointer; border-bottom:1px solid var(--border); }
+.customer-drop-item:last-child { border-bottom:none; }
+.customer-drop-item:active { background:#E0F7FA; }
+.cdi-name { font-weight:600; font-size:0.88rem; }
+.cdi-phone { font-size:0.72rem; color:var(--text2); }
+.customer-card { background:#fff; border-radius:12px; padding:12px 14px; margin-bottom:8px; box-shadow:var(--shadow); display:flex; align-items:center; gap:12px; }
+.cc-avatar { width:40px; height:40px; border-radius:50%; background:#E0F7FA; color:#006064; font-family:"Baloo 2",cursive; font-weight:800; font-size:1.1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.cc-info { flex:1; min-width:0; }
+.cc-name { font-weight:700; font-size:0.9rem; }
+.cc-phone { font-size:0.72rem; color:var(--text2); margin-top:2px; }
+.cc-stats { font-size:0.7rem; color:#006064; font-weight:600; margin-top:3px; }
+.cc-actions { display:flex; gap:6px; }
+.cc-btn { background:#E0F7FA; border:none; border-radius:7px; padding:6px 10px; font-size:0.75rem; font-weight:600; color:#006064; cursor:pointer; }
+.cc-btn.wa { background:#E8F5E9; color:#2E7D32; }
 .bill-sent-badge { display:inline-block; font-size:0.6rem; font-weight:700; padding:2px 7px; border-radius:20px; background:#E0F7FA; color:#006064; border:1px solid #00BCD4; margin-left:5px; }
 .bill-checkbox { width:18px; height:18px; accent-color:#006064; cursor:pointer; flex-shrink:0; }
 .bill-select-bar { display:none; background:#006064; color:#fff; padding:10px 14px; border-radius:10px; margin-bottom:10px; align-items:center; justify-content:space-between; }
@@ -480,6 +495,16 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
   <div id="stockList"></div>
 </div>
  
+<!-- PAGE: CUSTOMERS -->
+<div class="page" id="page-customers">
+  <div style="display:flex;gap:8px;margin-bottom:10px;">
+    <input class="form-input" id="customerSearch" placeholder="🔍 Search customers..." style="flex:1;" oninput="renderCustomers()" />
+    <button onclick="openAddCustomerModal()" style="padding:0 14px;background:#006064;color:#fff;border:none;border-radius:10px;font-size:1.3rem;font-weight:700;cursor:pointer;flex-shrink:0;">＋</button>
+  </div>
+  <div id="customerStats" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;"></div>
+  <div id="customerList"></div>
+</div>
+ 
 <!-- PAGE: REPORTS -->
 <div class="page" id="page-report">
   <div class="bill-select-bar" id="billSelectBar">
@@ -533,6 +558,9 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
   <button class="nav-btn" onclick="navigate('report',this)">
     <span class="ico">📊</span>Report
   </button>
+  <button class="nav-btn" onclick="navigate('customers',this)">
+    <span class="ico">👥</span>Customers
+  </button>
 </div>
  
 <!-- FAB for adding stock -->
@@ -571,6 +599,31 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
  
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
+ 
+<!-- ADD CUSTOMER MODAL -->
+<div class="modal-overlay" id="addCustomerModal">
+  <div class="modal-sheet">
+    <div class="modal-title">
+      👤 Add Customer
+      <button class="modal-close" onclick="closeModal('addCustomerModal')">✕</button>
+    </div>
+    <div class="modal-form">
+      <div>
+        <label class="form-label">Customer Name *</label>
+        <input class="form-input" id="addCustName" placeholder="e.g. Ramesh Sharma" />
+      </div>
+      <div>
+        <label class="form-label">Phone Number *</label>
+        <input class="form-input" id="addCustPhone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile" />
+      </div>
+      <div>
+        <label class="form-label">Address (Optional)</label>
+        <input class="form-input" id="addCustAddress" placeholder="e.g. Near Bus Stand, Indore" />
+      </div>
+      <button class="btn-submit" onclick="saveNewCustomer()">✅ Save Customer</button>
+    </div>
+  </div>
+</div>
  
 <!-- EDIT SALE MODAL -->
 <div class="modal-overlay" id="editSaleModal">
@@ -619,9 +672,10 @@ body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--tex
       <button class="modal-close" onclick="closeModal('customerNameModal')">✕</button>
     </div>
     <div class="modal-form">
-      <div>
+      <div style="position:relative;">
         <label class="form-label">Customer Name (Optional)</label>
-        <input class="form-input" id="customerNameInput" placeholder="e.g. Ramesh Sharma" />
+        <input class="form-input" id="customerNameInput" placeholder="e.g. Ramesh Sharma" autocomplete="off" oninput="searchCustomerDropdown()" onfocus="searchCustomerDropdown()" />
+        <div class="customer-dropdown" id="customerDropdown" style="display:none;"></div>
       </div>
       <div>
         <label class="form-label">Customer Phone (Optional)</label>
@@ -930,6 +984,7 @@ function navigate(page, btn) {
   if (page === 'stock') renderStock();
   if (page === 'report') renderReport();
   if (page === 'sell') resetSellForm();
+  if (page === 'customers') renderCustomers();
 }
  
 // ══════════════════════════════════════════
@@ -1616,13 +1671,14 @@ function openCustomerNameModal(saleIds) {
   document.getElementById('customerNameModal').classList.add('open');
 }
  
-function proceedGenerateBill() {
+async function proceedGenerateBill() {
   closeModal('customerNameModal');
   const customerName = document.getElementById('customerNameInput').value.trim();
   const customerPhone = document.getElementById('customerPhoneInput').value.trim();
   const sales = state.sales.filter(s => pendingBillSaleIds.includes(s.id));
   const billNo = 'RT' + Date.now().toString().slice(-6);
   const doc = buildBillPDF(sales, billNo, customerName, customerPhone);
+  await autoSaveCustomerFromBill(customerName, customerPhone);
   sharePDF(doc, 'Bill_' + billNo + '.pdf', pendingBillSaleIds, customerPhone);
 }
  
@@ -1829,6 +1885,155 @@ function showToast(msg) {
 }
  
 // ══════════════════════════════════════════
+//  CUSTOMERS
+// ══════════════════════════════════════════
+let customers = []; // local cache
+ 
+async function loadCustomers() {
+  if (fbEnabled && db && userCol('customers')) {
+    try {
+      const snap = await userCol('customers').orderBy('name').get();
+      customers = snap.docs.map(d => d.data());
+    } catch(e) {
+      customers = JSON.parse(localStorage.getItem('rt_customers') || '[]');
+    }
+  } else {
+    customers = JSON.parse(localStorage.getItem('rt_customers') || '[]');
+  }
+}
+ 
+async function saveCustomer(cust) {
+  // Update local cache
+  const idx = customers.findIndex(c => c.id === cust.id);
+  if (idx >= 0) customers[idx] = cust;
+  else customers.push(cust);
+  // Save
+  if (fbEnabled && db && userCol('customers')) {
+    try { await userCol('customers').doc(String(cust.id)).set(cust); }
+    catch(e) { console.warn('Save customer error:', e); }
+  }
+  localStorage.setItem('rt_customers', JSON.stringify(customers));
+}
+ 
+function openAddCustomerModal() {
+  document.getElementById('addCustName').value = '';
+  document.getElementById('addCustPhone').value = '';
+  document.getElementById('addCustAddress').value = '';
+  document.getElementById('addCustomerModal').classList.add('open');
+}
+ 
+async function saveNewCustomer() {
+  const name = document.getElementById('addCustName').value.trim();
+  const phone = document.getElementById('addCustPhone').value.trim();
+  const address = document.getElementById('addCustAddress').value.trim();
+  if (!name) { showToast('Enter customer name!'); return; }
+  if (!phone || phone.length < 10) { showToast('Enter valid 10-digit phone!'); return; }
+  // Check duplicate
+  if (customers.find(c => c.phone === phone)) {
+    showToast('Customer with this phone already exists!'); return;
+  }
+  const cust = { id: Date.now(), name, phone, address, createdAt: new Date().toISOString(), totalBills: 0, totalAmount: 0 };
+  await saveCustomer(cust);
+  closeModal('addCustomerModal');
+  renderCustomers();
+  showToast('✅ Customer saved!');
+}
+ 
+// ── Auto-save customer when bill is generated ──
+async function autoSaveCustomerFromBill(name, phone) {
+  if (!name && !phone) return;
+  if (!phone || phone.length < 10) return;
+  const existing = customers.find(c => c.phone === phone);
+  if (existing) {
+    // Update stats
+    existing.totalBills = (existing.totalBills || 0) + 1;
+    await saveCustomer(existing);
+  } else if (name) {
+    const cust = { id: Date.now(), name, phone, address: '', createdAt: new Date().toISOString(), totalBills: 1, totalAmount: 0 };
+    await saveCustomer(cust);
+    showToast('👤 Customer saved!');
+  }
+}
+ 
+// ── Customer dropdown for bill modal ──
+function searchCustomerDropdown() {
+  const q = document.getElementById('customerNameInput').value.trim().toLowerCase();
+  const drop = document.getElementById('customerDropdown');
+  const matches = customers.filter(c =>
+    c.name.toLowerCase().includes(q) || c.phone.includes(q)
+  ).slice(0, 8);
+ 
+  if (!matches.length) { drop.style.display = 'none'; return; }
+ 
+  drop.innerHTML = matches.map(c => `
+    <div class="customer-drop-item" onclick="selectCustomerForBill('${c.name.replace(/'/g,"\'")}','${c.phone}')">
+      <div class="cdi-name">${c.name}</div>
+      <div class="cdi-phone">📱 ${c.phone}${c.address ? ' • ' + c.address : ''}</div>
+    </div>
+  `).join('');
+  drop.style.display = 'block';
+}
+ 
+function selectCustomerForBill(name, phone) {
+  document.getElementById('customerNameInput').value = name;
+  document.getElementById('customerPhoneInput').value = phone;
+  document.getElementById('customerDropdown').style.display = 'none';
+}
+ 
+document.addEventListener('click', e => {
+  if (!e.target.closest('#customerDropdown') && !e.target.closest('#customerNameInput')) {
+    const drop = document.getElementById('customerDropdown');
+    if (drop) drop.style.display = 'none';
+  }
+});
+ 
+// ── Render customers page ──
+function renderCustomers() {
+  const q = document.getElementById('customerSearch')?.value.trim().toLowerCase() || '';
+  let list = customers;
+  if (q) list = list.filter(c => c.name.toLowerCase().includes(q) || c.phone.includes(q));
+ 
+  // Stats
+  document.getElementById('customerStats').innerHTML = `
+    <div class="stat-box"><div class="stat-label">Total Customers</div><div class="stat-val" style="color:#006064;">${customers.length}</div></div>
+    <div class="stat-box"><div class="stat-label">Filtered</div><div class="stat-val" style="color:#00BCD4;">${list.length}</div></div>
+  `;
+ 
+  const el = document.getElementById('customerList');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state"><div class="big-ico">👥</div><p>No customers yet.<br>They save automatically when you generate a bill.</p></div>';
+    return;
+  }
+ 
+  el.innerHTML = list.map(c => `
+    <div class="customer-card">
+      <div class="cc-avatar">${c.name.charAt(0).toUpperCase()}</div>
+      <div class="cc-info">
+        <div class="cc-name">${c.name}</div>
+        <div class="cc-phone">📱 ${c.phone}</div>
+        ${c.address ? `<div class="cc-phone">📍 ${c.address}</div>` : ''}
+        <div class="cc-stats">🧾 ${c.totalBills || 0} bills</div>
+      </div>
+      <div class="cc-actions">
+        <button class="cc-btn wa" onclick="window.open('https://wa.me/91${c.phone}','_blank')">📱</button>
+        <button class="cc-btn" onclick="deleteCustomer(${c.id})">🗑</button>
+      </div>
+    </div>
+  `).join('');
+}
+ 
+async function deleteCustomer(id) {
+  if (!confirm('Delete this customer?')) return;
+  customers = customers.filter(c => c.id !== id);
+  localStorage.setItem('rt_customers', JSON.stringify(customers));
+  if (fbEnabled && db && userCol('customers')) {
+    userCol('customers').doc(String(id)).delete().catch(()=>{});
+  }
+  renderCustomers();
+  showToast('Customer deleted');
+}
+ 
+// ══════════════════════════════════════════
 //  NEW PRODUCT
 // ══════════════════════════════════════════
 function openNewProduct() {
@@ -1984,6 +2189,7 @@ function loginAsStaff() {
   const navBtns = document.querySelectorAll('.nav-btn');
   navBtns[0].style.display = 'none'; // Home
   navBtns[3].style.display = 'none'; // Report
+  navBtns[4].style.display = 'none'; // Customers
   // Navigate to Sell
   navigate('sell', navBtns[1]);
 }
@@ -2058,6 +2264,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const d = new Date();
   document.getElementById('headerDate').textContent = d.toLocaleDateString('en-IN', {day:'2-digit',month:'short',year:'numeric'});
   renderHome();
+  loadCustomers();
   // Setup cat filter for stock page  
   const cats = ['ALL', ...new Set(MASTER_PRODUCTS.map(p => p.cat))];
   const cf = document.getElementById('catFilter');
